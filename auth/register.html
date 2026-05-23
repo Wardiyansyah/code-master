@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar - CodeMaster Academy</title>
+    <meta name="description" content="Daftar akun gratis di CodeMaster Academy dan mulai belajar coding hari ini.">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6C3CE1;
+            --primary-dark: #5A2BC4;
+            --primary-light: #8B5CF6;
+            --secondary: #06D6A0;
+            --secondary-dark: #05B88A;
+            --dark: #0F0F1A;
+            --dark-2: #1A1A2E;
+            --dark-3: #252540;
+            --gray-1: #6B7280;
+            --gray-2: #9CA3AF;
+            --gray-3: #D1D5DB;
+            --white: #FFFFFF;
+            --gradient-1: linear-gradient(135deg, #6C3CE1 0%, #06D6A0 100%);
+            --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.2);
+            --radius-lg: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            line-height: 1.6;
+        }
+
+        .auth-container {
+            width: 100%;
+            max-width: 480px;
+            background: var(--dark-2);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-lg);
+            padding: 48px 40px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .auth-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+        }
+
+        .auth-logo .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .auth-header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .auth-header p {
+            color: var(--gray-2);
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--gray-2);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            background: var(--dark-3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: var(--white);
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+
+        .form-group input:focus {
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 3px rgba(108, 60, 225, 0.2);
+        }
+
+        .form-group input::placeholder {
+            color: var(--gray-1);
+        }
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            font-size: 0.9rem;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gray-2);
+        }
+
+        .checkbox-group input {
+            width: 16px;
+            height: 16px;
+            accent-color: var(--primary);
+        }
+
+        .forgot-link {
+            color: var(--primary-light);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(108, 60, 225, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(108, 60, 225, 0.5);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            margin-top: 12px;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .auth-divider {
+            text-align: center;
+            margin: 24px 0;
+            color: var(--gray-1);
+            position: relative;
+        }
+
+        .auth-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .auth-divider span {
+            background: var(--dark-2);
+            padding: 0 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .social-login {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px;
+            background: var(--dark-3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .social-btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary-light);
+        }
+
+        .auth-footer {
+            text-align: center;
+            margin-top: 32px;
+            color: var(--gray-2);
+            font-size: 0.9rem;
+        }
+
+        .auth-footer a {
+            color: var(--primary-light);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .auth-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .error-msg {
+            color: #FF6B6B;
+            font-size: 0.85rem;
+            margin-top: 6px;
+            display: none;
+        }
+
+        .form-group.error input {
+            border-color: #FF6B6B;
+        }
+
+        .form-group.error .error-msg {
+            display: block;
+        }
+
+        @media (max-width: 480px) {
+            .auth-container {
+                padding: 32px 24px;
+            }
+
+            .social-login {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .password-strength {
+            height: 4px;
+            background: var(--dark-3);
+            border-radius: 2px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+
+        .password-strength-bar {
+            height: 100%;
+            width: 0;
+            transition: width 0.3s, background 0.3s;
+            border-radius: 2px;
+        }
+
+        .password-strength-bar.weak {
+            width: 33%;
+            background: #FF6B6B;
+        }
+
+        .password-strength-bar.medium {
+            width: 66%;
+            background: #FFD93D;
+        }
+
+        .password-strength-bar.strong {
+            width: 100%;
+            background: #06D6A0;
+        }
+
+        .password-hint {
+            font-size: 0.8rem;
+            color: var(--gray-1);
+            margin-top: 4px;
+        }
+
+        .terms-check {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin: 20px 0;
+            font-size: 0.9rem;
+            color: var(--gray-2);
+        }
+
+        .terms-check input {
+            margin-top: 4px;
+            accent-color: var(--primary);
+        }
+
+        .terms-check a {
+            color: var(--primary-light);
+            text-decoration: none;
+        }
+
+        .terms-check a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="auth-container">
+        <div class="auth-header">
+            <a href="../index.html" class="auth-logo">
+                <div class="logo-icon">⚡</div> CodeMaster
+            </a>
+            <h1>Mulai Perjalanan Coding 🚀</h1>
+            <p>Buat akun gratis dan akses 5 kursus pertama</p>
+        </div>
+
+        <form id="registerForm" onsubmit="handleRegister(event)">
+            <div class="form-group" id="nameGroup">
+                <label for="name">Nama Lengkap</label>
+                <input type="text" id="name" name="name" placeholder="Contoh: Budi Santoso" required>
+                <span class="error-msg">Nama harus minimal 2 karakter</span>
+            </div>
+
+            <div class="form-group" id="emailGroup">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="nama@email.com" required>
+                <span class="error-msg">Mohon masukkan email yang valid</span>
+            </div>
+
+            <div class="form-group" id="passwordGroup">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Minimal 8 karakter" required
+                    oninput="checkStrength(this.value)">
+                <div class="password-strength">
+                    <div class="password-strength-bar" id="strengthBar"></div>
+                </div>
+                <span class="password-hint">Gunakan kombinasi huruf, angka, dan simbol</span>
+                <span class="error-msg">Password minimal 8 karakter</span>
+            </div>
+
+            <div class="form-group" id="confirmGroup">
+                <label for="confirm">Konfirmasi Password</label>
+                <input type="password" id="confirm" name="confirm" placeholder="Ulangi password" required>
+                <span class="error-msg">Password tidak cocok</span>
+            </div>
+
+            <label class="terms-check">
+                <input type="checkbox" id="terms" name="terms" required>
+                <span>Saya setuju dengan <a href="../legal/terms.html" target="_blank">Syarat & Ketentuan</a> dan <a
+                        href="../legal/privacy.html" target="_blank">Kebijakan Privasi</a></span>
+            </label>
+
+            <button type="submit" class="btn btn-primary">✨ Buat Akun Gratis</button>
+        </form>
+
+        <div class="auth-divider"><span>atau daftar dengan</span></div>
+
+        <div class="social-login">
+            <a href="#" class="social-btn" onclick="socialRegister('google')">
+                <span>🔵</span> Google
+            </a>
+            <a href="#" class="social-btn" onclick="socialRegister('github')">
+                <span>⚫</span> GitHub
+            </a>
+        </div>
+
+        <div class="auth-footer">
+            Sudah punya akun? <a href="login.html">Masuk</a>
+        </div>
+    </div>
+
+    <script>
+        function checkStrength(password) {
+            const bar = document.getElementById('strengthBar');
+            let strength = 0;
+            if (password.length >= 8) strength++;
+            if (/[A-Z]/.test(password) && /[a-z]/.test(password)) strength++;
+            if (/[0-9]/.test(password) || /[^A-Za-z0-9]/.test(password)) strength++;
+
+            bar.className = 'password-strength-bar';
+            if (strength === 1) bar.classList.add('weak');
+            else if (strength === 2) bar.classList.add('medium');
+            else if (strength === 3) bar.classList.add('strong');
+        }
+
+        function handleRegister(e) {
+            e.preventDefault();
+            const password = document.getElementById('password').value;
+            const confirm = document.getElementById('confirm').value;
+            const terms = document.getElementById('terms').checked;
+            let valid = true;
+
+            if (password.length < 8) {
+                document.getElementById('passwordGroup').classList.add('error');
+                valid = false;
+            } else {
+                document.getElementById('passwordGroup').classList.remove('error');
+            }
+
+            if (password !== confirm) {
+                document.getElementById('confirmGroup').classList.add('error');
+                valid = false;
+            } else {
+                document.getElementById('confirmGroup').classList.remove('error');
+            }
+
+            if (!terms) {
+                alert('Anda harus menyetujui Syarat & Ketentuan');
+                valid = false;
+            }
+
+            if (valid) {
+                alert('Pendaftaran berhasil! Silakan cek email untuk verifikasi.');
+                window.location.href = 'login.html';
+            }
+        }
+
+        function socialRegister(provider) {
+            alert(`Mendaftar dengan ${provider}... (Demo)`);
+        }
+
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('input', function () {
+                this.closest('.form-group')?.classList.remove('error');
+            });
+        });
+    </script>
+</body>
+
+</html>

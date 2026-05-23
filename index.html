@@ -1,0 +1,2753 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <!-- ==================== SEO META TAGS ==================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeMaster Academy - Kursus Coding Online Terlengkap | Belajar Programming dari Nol</title>
+    <meta name="description"
+        content="Belajar coding dari nol hingga mahir dengan CodeMaster Academy. Kursus online programming interaktif dengan playground praktis. Tersedia kursus HTML, CSS, JavaScript, Python, dan lainnya.">
+    <meta name="keywords"
+        content="kursus coding online, belajar programming, kursus javascript, kursus python, coding untuk pemula, bootcamp programming, online course coding indonesia">
+    <meta name="author" content="CodeMaster Academy">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.codemasteracademy.id/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.codemasteracademy.id/">
+    <meta property="og:title" content="CodeMaster Academy - Kursus Coding Online Terlengkap">
+    <meta property="og:description"
+        content="Belajar coding dari nol hingga mahir. Kursus online interaktif dengan playground praktis.">
+    <meta property="og:image" content="https://www.codemasteracademy.id/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.codemasteracademy.id/">
+    <meta name="twitter:title" content="CodeMaster Academy - Kursus Coding Online Terlengkap">
+    <meta name="twitter:description"
+        content="Belajar coding dari nol hingga mahir. Kursus online interaktif dengan playground praktis.">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "CodeMaster Academy",
+        "description": "Platform kursus coding online terlengkap dengan pembelajaran interaktif dan playground praktis.",
+        "url": "https://www.codemasteracademy.id",
+        "logo": "https://www.codemasteracademy.id/logo.png",
+        "sameAs": [
+            "https://www.facebook.com/codemasteracademy",
+            "https://www.instagram.com/codemasteracademy",
+            "https://www.youtube.com/codemasteracademy"
+        ],
+        "offers": {
+            "@type": "Offer",
+            "category": "Online Course",
+            "priceCurrency": "IDR",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
+
+    <!-- Course Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Full-Stack Web Development Bootcamp",
+        "description": "Belajar HTML, CSS, JavaScript, React, Node.js dari nol hingga siap kerja.",
+        "provider": {
+            "@type": "Organization",
+            "name": "CodeMaster Academy",
+            "sameAs": "https://www.codemasteracademy.id"
+        },
+        "educationalLevel": "Beginner to Advanced",
+        "inLanguage": "id",
+        "offers": {
+            "@type": "Offer",
+            "price": "499000",
+            "priceCurrency": "IDR",
+            "category": "Paid"
+        }
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ==================== CSS RESET & VARIABLES ==================== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6C3CE1;
+            --primary-dark: #5A2BC4;
+            --primary-light: #8B5CF6;
+            --secondary: #06D6A0;
+            --secondary-dark: #05B88A;
+            --accent: #FF6B6B;
+            --accent-orange: #FF8C42;
+            --dark: #0F0F1A;
+            --dark-2: #1A1A2E;
+            --dark-3: #252540;
+            --dark-4: #2D2D4A;
+            --gray-1: #6B7280;
+            --gray-2: #9CA3AF;
+            --gray-3: #D1D5DB;
+            --light: #F8F9FC;
+            --white: #FFFFFF;
+            --gradient-1: linear-gradient(135deg, #6C3CE1 0%, #06D6A0 100%);
+            --gradient-2: linear-gradient(135deg, #FF6B6B 0%, #FF8C42 100%);
+            --gradient-3: linear-gradient(135deg, #6C3CE1 0%, #8B5CF6 50%, #06D6A0 100%);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.15);
+            --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.2);
+            --shadow-glow: 0 0 30px rgba(108, 60, 225, 0.3);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ==================== UTILITY CLASSES ==================== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(108, 60, 225, 0.15);
+            border: 1px solid rgba(108, 60, 225, 0.3);
+            color: var(--primary-light);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray-2);
+            max-width: 600px;
+            line-height: 1.7;
+        }
+
+        .gradient-text {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(108, 60, 225, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(108, 60, 225, 0.5);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .btn-accent {
+            background: var(--gradient-2);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-accent:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.5);
+        }
+
+        /* ==================== NAVBAR ==================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 0;
+            transition: var(--transition);
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            background: rgba(15, 15, 26, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 12px 0;
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.4rem;
+        }
+
+        .navbar-logo .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-1);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .navbar-menu a {
+            color: var(--gray-2);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .navbar-menu a:hover {
+            color: var(--white);
+        }
+
+        .navbar-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-1);
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+
+        .navbar-menu a:hover::after {
+            width: 100%;
+        }
+
+        .navbar-cta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .navbar-cta .btn {
+            padding: 10px 24px;
+            font-size: 0.9rem;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 8px;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: orbFloat 8s ease-in-out infinite;
+        }
+
+        .hero-bg .orb-1 {
+            width: 500px;
+            height: 500px;
+            background: var(--primary);
+            top: -10%;
+            right: -5%;
+            animation-delay: 0s;
+        }
+
+        .hero-bg .orb-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--secondary);
+            bottom: -10%;
+            left: -5%;
+            animation-delay: -3s;
+        }
+
+        .hero-bg .orb-3 {
+            width: 300px;
+            height: 300px;
+            background: var(--accent);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.2;
+            animation-delay: -5s;
+        }
+
+        @keyframes orbFloat {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            33% {
+                transform: translate(30px, -30px) scale(1.05);
+            }
+
+            66% {
+                transform: translate(-20px, 20px) scale(0.95);
+            }
+        }
+
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            z-index: 0;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(6, 214, 160, 0.1);
+            border: 1px solid rgba(6, 214, 160, 0.3);
+            color: var(--secondary);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .hero-badge .pulse {
+            width: 8px;
+            height: 8px;
+            background: var(--secondary);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(1.5);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--gray-2);
+            margin-bottom: 36px;
+            max-width: 520px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+        }
+
+        .hero-stat {
+            text-align: left;
+        }
+
+        .hero-stat .number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-stat .label {
+            font-size: 0.85rem;
+            color: var(--gray-2);
+            margin-top: 4px;
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero-code-window {
+            background: var(--dark-2);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg), var(--shadow-glow);
+        }
+
+        .code-window-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .code-window-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .code-window-dot.red {
+            background: #FF5F57;
+        }
+
+        .code-window-dot.yellow {
+            background: #FFBD2E;
+        }
+
+        .code-window-dot.green {
+            background: #28C840;
+        }
+
+        .code-window-title {
+            margin-left: 12px;
+            font-size: 0.8rem;
+            color: var(--gray-2);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .code-window-body {
+            padding: 24px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            line-height: 1.8;
+            min-height: 280px;
+        }
+
+        .code-line {
+            display: flex;
+            gap: 16px;
+        }
+
+        .code-line-number {
+            color: var(--dark-4);
+            user-select: none;
+            min-width: 20px;
+            text-align: right;
+        }
+
+        .code-keyword {
+            color: #C792EA;
+        }
+
+        .code-function {
+            color: #82AAFF;
+        }
+
+        .code-string {
+            color: #C3E88D;
+        }
+
+        .code-comment {
+            color: #546E7A;
+        }
+
+        .code-variable {
+            color: #F78C6C;
+        }
+
+        .code-tag {
+            color: #FF5370;
+        }
+
+        .code-attr {
+            color: #FFCB6B;
+        }
+
+        .code-bracket {
+            color: #89DDFF;
+        }
+
+        .code-text {
+            color: #EEFFFF;
+        }
+
+        .typing-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1em;
+            background: var(--primary-light);
+            animation: blink 1s step-end infinite;
+            vertical-align: text-bottom;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ==================== TRUSTED BY ==================== */
+        .trusted {
+            padding: 60px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.01);
+        }
+
+        .trusted-text {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--gray-1);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 32px;
+        }
+
+        .trusted-logos {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+            opacity: 0.5;
+        }
+
+        .trusted-logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--gray-2);
+            letter-spacing: 1px;
+        }
+
+        /* ==================== FEATURES ==================== */
+        .features {
+            background: var(--dark);
+            position: relative;
+        }
+
+        .features-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .features-header .section-subtitle {
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--dark-2);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-1);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(108, 60, 225, 0.3);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-icon.purple {
+            background: rgba(108, 60, 225, 0.15);
+        }
+
+        .feature-icon.green {
+            background: rgba(6, 214, 160, 0.15);
+        }
+
+        .feature-icon.orange {
+            background: rgba(255, 140, 66, 0.15);
+        }
+
+        .feature-icon.red {
+            background: rgba(255, 107, 107, 0.15);
+        }
+
+        .feature-icon.blue {
+            background: rgba(59, 130, 246, 0.15);
+        }
+
+        .feature-icon.yellow {
+            background: rgba(250, 204, 21, 0.15);
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: var(--gray-2);
+            line-height: 1.7;
+        }
+
+        /* ==================== COURSES ==================== */
+        .courses {
+            background: var(--dark-2);
+        }
+
+        .courses-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .courses-header .section-subtitle {
+            margin: 0 auto;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .course-card {
+            background: var(--dark-3);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .course-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(108, 60, 225, 0.3);
+        }
+
+        .course-thumbnail {
+            height: 200px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+        }
+
+        .course-thumbnail.html {
+            background: linear-gradient(135deg, #E44D26, #F16529);
+        }
+
+        .course-thumbnail.js {
+            background: linear-gradient(135deg, #F7DF1E, #F0DB4F);
+        }
+
+        .course-thumbnail.python {
+            background: linear-gradient(135deg, #3776AB, #FFD43B);
+        }
+
+        .course-thumbnail.react {
+            background: linear-gradient(135deg, #20232A, #61DAFB);
+        }
+
+        .course-thumbnail.node {
+            background: linear-gradient(135deg, #339933, #6CC24A);
+        }
+
+        .course-thumbnail.fullstack {
+            background: var(--gradient-3);
+        }
+
+        .course-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .course-badge.bestseller {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .course-badge.new {
+            background: var(--secondary);
+            color: var(--dark);
+        }
+
+        .course-badge.popular {
+            background: var(--primary-light);
+            color: var(--white);
+        }
+
+        .course-info {
+            padding: 24px;
+        }
+
+        .course-info h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .course-info p {
+            font-size: 0.9rem;
+            color: var(--gray-2);
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .course-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+            font-size: 0.85rem;
+            color: var(--gray-1);
+        }
+
+        .course-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .course-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .course-price {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--secondary);
+        }
+
+        .course-price .original {
+            font-size: 0.85rem;
+            color: var(--gray-1);
+            text-decoration: line-through;
+            font-weight: 400;
+            margin-left: 8px;
+        }
+
+        .course-footer .btn {
+            padding: 8px 20px;
+            font-size: 0.85rem;
+        }
+
+        /* ==================== PLAYGROUND ==================== */
+        .playground {
+            background: var(--dark);
+            position: relative;
+        }
+
+        .playground-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .playground-header .section-subtitle {
+            margin: 0 auto;
+        }
+
+        .playground-container {
+            background: var(--dark-2);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .playground-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .playground-tabs {
+            display: flex;
+            gap: 4px;
+        }
+
+        .playground-tab {
+            padding: 8px 20px;
+            background: transparent;
+            border: none;
+            color: var(--gray-2);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+        }
+
+        .playground-tab.active {
+            background: rgba(108, 60, 225, 0.2);
+            color: var(--primary-light);
+        }
+
+        .playground-tab:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--white);
+        }
+
+        .playground-actions {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .btn-run {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 20px;
+            background: var(--secondary);
+            color: var(--dark);
+            border: none;
+            border-radius: var(--radius-sm);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-run:hover {
+            background: var(--secondary-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn-reset {
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--gray-2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-sm);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-reset:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--white);
+        }
+
+        .playground-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 450px;
+        }
+
+        .playground-editor {
+            position: relative;
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .playground-editor textarea {
+            width: 100%;
+            height: 100%;
+            min-height: 450px;
+            background: transparent;
+            color: var(--white);
+            border: none;
+            padding: 20px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            resize: none;
+            outline: none;
+            tab-size: 2;
+        }
+
+        .playground-editor textarea::placeholder {
+            color: var(--dark-4);
+        }
+
+        .playground-preview {
+            background: var(--white);
+            position: relative;
+        }
+
+        .playground-preview-label {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            background: var(--dark-2);
+            color: var(--gray-2);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .playground-preview iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 450px;
+            border: none;
+            background: var(--white);
+        }
+
+        .playground-templates {
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .playground-templates span {
+            font-size: 0.85rem;
+            color: var(--gray-1);
+            font-weight: 600;
+        }
+
+        .template-btn {
+            padding: 6px 16px;
+            background: rgba(108, 60, 225, 0.1);
+            border: 1px solid rgba(108, 60, 225, 0.2);
+            color: var(--primary-light);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+
+        .template-btn:hover {
+            background: rgba(108, 60, 225, 0.2);
+            border-color: rgba(108, 60, 225, 0.4);
+        }
+
+        /* ==================== TESTIMONIALS ==================== */
+        .testimonials {
+            background: var(--dark-2);
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .testimonials-header .section-subtitle {
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            background: var(--dark-3);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(108, 60, 225, 0.2);
+        }
+
+        .testimonial-stars {
+            color: #FFD700;
+            font-size: 1rem;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-text {
+            font-size: 0.95rem;
+            color: var(--gray-2);
+            line-height: 1.7;
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .testimonial-avatar.av1 {
+            background: linear-gradient(135deg, #6C3CE1, #8B5CF6);
+        }
+
+        .testimonial-avatar.av2 {
+            background: linear-gradient(135deg, #06D6A0, #05B88A);
+        }
+
+        .testimonial-avatar.av3 {
+            background: linear-gradient(135deg, #FF6B6B, #FF8C42);
+        }
+
+        .testimonial-info h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .testimonial-info p {
+            font-size: 0.8rem;
+            color: var(--gray-1);
+        }
+
+        /* ==================== PRICING ==================== */
+        .pricing {
+            background: var(--dark);
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .pricing-header .section-subtitle {
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            align-items: start;
+        }
+
+        .pricing-card {
+            background: var(--dark-2);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-glow);
+            transform: scale(1.02);
+        }
+
+        .pricing-card.featured::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-1);
+            border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+        }
+
+        .pricing-popular {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-1);
+            color: var(--white);
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .pricing-card .pricing-desc {
+            font-size: 0.9rem;
+            color: var(--gray-2);
+            margin-bottom: 24px;
+        }
+
+        .pricing-price {
+            margin-bottom: 32px;
+        }
+
+        .pricing-price .amount {
+            font-size: 2.5rem;
+            font-weight: 900;
+        }
+
+        .pricing-price .currency {
+            font-size: 1.2rem;
+            font-weight: 600;
+            vertical-align: super;
+        }
+
+        .pricing-price .period {
+            font-size: 0.9rem;
+            color: var(--gray-1);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0;
+            font-size: 0.95rem;
+            color: var(--gray-2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-features li .check {
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+
+        .pricing-features li .cross {
+            color: var(--gray-1);
+            font-size: 1.1rem;
+        }
+
+        .pricing-card .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* ==================== FAQ ==================== */
+        .faq {
+            background: var(--dark-2);
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .faq-header .section-subtitle {
+            margin: 0 auto;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--dark-3);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: var(--radius-md);
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            border-color: rgba(108, 60, 225, 0.2);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 20px 24px;
+            background: transparent;
+            border: none;
+            color: var(--white);
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            color: var(--primary-light);
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            transition: var(--transition);
+            color: var(--primary-light);
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-answer p {
+            padding: 0 24px 20px;
+            font-size: 0.95rem;
+            color: var(--gray-2);
+            line-height: 1.7;
+        }
+
+        /* ==================== CTA SECTION ==================== */
+        .cta-section {
+            background: var(--dark);
+            padding: 100px 0;
+        }
+
+        .cta-box {
+            background: var(--dark-2);
+            border: 1px solid rgba(108, 60, 225, 0.3);
+            border-radius: var(--radius-xl);
+            padding: 80px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(108, 60, 225, 0.1) 0%, transparent 50%);
+            animation: rotateBg 20s linear infinite;
+        }
+
+        @keyframes rotateBg {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .cta-box>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-box h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 900;
+            margin-bottom: 16px;
+        }
+
+        .cta-box p {
+            font-size: 1.1rem;
+            color: var(--gray-2);
+            margin-bottom: 36px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ==================== FOOTER ==================== */
+        .footer {
+            background: var(--dark-2);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 64px 0 32px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand p {
+            color: var(--gray-2);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-top: 16px;
+            max-width: 320px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-sm);
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-2);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .footer-col h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: var(--gray-2);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-light);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-bottom p {
+            font-size: 0.85rem;
+            color: var(--gray-1);
+        }
+
+        .footer-bottom a {
+            color: var(--primary-light);
+            text-decoration: none;
+        }
+
+        /* ==================== MOBILE MENU ==================== */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 15, 26, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .mobile-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .mobile-menu a:hover {
+            color: var(--primary-light);
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* ==================== SCROLL ANIMATIONS ==================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 1024px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero p {
+                margin: 0 auto 36px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .courses-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .navbar-menu,
+            .navbar-cta {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 420px;
+                margin: 0 auto;
+            }
+
+            .playground-body {
+                grid-template-columns: 1fr;
+            }
+
+            .playground-editor textarea {
+                min-height: 300px;
+            }
+
+            .playground-preview iframe {
+                min-height: 300px;
+            }
+
+            .playground-editor {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            .hero-stats {
+                gap: 24px;
+            }
+
+            .cta-box {
+                padding: 48px 24px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="#" class="navbar-logo" aria-label="CodeMaster Academy Home">
+                <div class="logo-icon">⚡</div>
+                CodeMaster
+            </a>
+
+            <ul class="navbar-menu">
+                <li><a href="#features">Fitur</a></li>
+                <li><a href="#courses">Kursus</a></li>
+                <li><a href="#playground">Playground</a></li>
+                <li><a href="#pricing">Harga</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+
+            <div class="navbar-cta">
+                <a href="auth/login.html" class="btn btn-secondary">Masuk</a>
+                <a href="#pricing" class="btn btn-primary">Mulai Gratis</a>
+            </div>
+
+            <button class="hamburger" aria-label="Toggle menu" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" onclick="toggleMobileMenu()" aria-label="Close menu">✕</button>
+        <a href="#features" onclick="toggleMobileMenu()">Fitur</a>
+        <a href="#courses" onclick="toggleMobileMenu()">Kursus</a>
+        <a href="#playground" onclick="toggleMobileMenu()">Playground</a>
+        <a href="#pricing" onclick="toggleMobileMenu()">Harga</a>
+        <a href="#faq" onclick="toggleMobileMenu()">FAQ</a>
+        <a href="#" class="btn btn-primary" style="margin-top: 16px;">Mulai Gratis</a>
+    </div>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <header class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+        </div>
+        <div class="hero-grid"></div>
+
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="pulse"></span>
+                    🚀 Pendaftaran Batch Baru Dibuka
+                </div>
+
+                <h1>
+                    Kuasai <span class="gradient-text">Coding</span> dari Nol Hingga Siap Kerja
+                </h1>
+
+                <p>
+                    Platform belajar programming interaktif dengan kurikulum industri, mentor berpengalaman, dan
+                    playground praktis langsung di browser. Mulai perjalanan coding Anda hari ini.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#playground" class="btn btn-primary">
+                        ▶ Coba Playground Gratis
+                    </a>
+                    <a href="#courses" class="btn btn-secondary">
+                        📚 Lihat Kursus
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="number">15K+</div>
+                        <div class="label">Siswa Aktif</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="number">50+</div>
+                        <div class="label">Kursus</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="number">4.9</div>
+                        <div class="label">Rating</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-code-window">
+                    <div class="code-window-header">
+                        <div class="code-window-dot red"></div>
+                        <div class="code-window-dot yellow"></div>
+                        <div class="code-window-dot green"></div>
+                        <span class="code-window-title">index.js</span>
+                    </div>
+                    <div class="code-window-body" id="heroCode">
+                        <div class="code-line">
+                            <span class="code-line-number">1</span>
+                            <span><span class="code-comment">// 🚀 Selamat datang di CodeMaster!</span></span>
+                        </div>
+                        <div class="code-line">
+                            <span class="code-line-number">2</span>
+                            <span><span class="code-keyword">const</span> <span class="code-variable">siswa</span> <span
+                                    class="code-bracket">=</span> <span class="code-bracket">{</span></span>
+                        </div>
+                        <div class="code-line">
+                            <span class="code-line-number">3</span>
+                            <span>&nbsp;&nbsp;<span class="code-attr">nama</span><span class="code-bracket">:</span>
+                                <span class="code-string">"Kamu"</span>,</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="code-line-number">4</span>
+                            <span>&nbsp;&nbsp;<span class="code-attr">skill</span><span class="code-bracket">:</span>
+                                <span class="code-string">"Developer"</span>,</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="code-line-number">5</span>
+                            <span>&nbsp;&nbsp;<span class="code-attr">level</span><span class="code-bracket">:</span>
+                                <span class="code-string">"Mahir"</span></span>
+                        </div>
+                        <div class="code-line">
+                            <span class="code-line-number">6</span>
+                            <span><span class="code-bracket">}</span>;</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="code-line-number">7</span>
+                            <span></span>
+                        </div>
+                        <div class="code-line">
+                            <span class="code-line-number">8</span>
+                            <span><span class="code-function">console</span>.<span class="code-function">log</span><span
+                                    class="code-bracket">(</span><span class="code-string">`Halo, ${<span
+                                        class="code-variable">siswa</span>.nama}!`</span><span
+                                    class="code-bracket">)</span>;</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="code-line-number">9</span>
+                            <span><span class="code-comment">// Mulai belajar sekarang →</span><span
+                                    class="typing-cursor"></span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== TRUSTED BY ==================== -->
+    <section class="trusted" aria-label="Trusted by companies">
+        <div class="container">
+            <p class="trusted-text">Dipercaya oleh tim engineering dari</p>
+            <div class="trusted-logos">
+                <span class="trusted-logo">Google</span>
+                <span class="trusted-logo">Tokopedia</span>
+                <span class="trusted-logo">Gojek</span>
+                <span class="trusted-logo">Shopee</span>
+                <span class="trusted-logo">Bukalapak</span>
+                <span class="trusted-logo">Traveloka</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FEATURES ==================== -->
+    <section class="features section" id="features">
+        <div class="container">
+            <div class="features-header reveal">
+                <span class="section-label">✨ Kenapa CodeMaster?</span>
+                <h2 class="section-title">Belajar Coding yang <span class="gradient-text">Beda dari Yang Lain</span>
+                </h2>
+                <p class="section-subtitle">Metode pembelajaran interaktif yang dirancang agar Anda bisa langsung
+                    praktek dan memahami konsep secara mendalam.</p>
+            </div>
+
+            <div class="features-grid">
+                <article class="feature-card reveal">
+                    <div class="feature-icon purple">🎯</div>
+                    <h3>Kurikulum Industri</h3>
+                    <p>Materi disusun bersama praktisi dari perusahaan teknologi terkemuka. Relevan dengan kebutuhan
+                        industri saat ini.</p>
+                </article>
+
+                <article class="feature-card reveal">
+                    <div class="feature-icon green">⚡</div>
+                    <h3>Playground Interaktif</h3>
+                    <p>Langsung coba kode di browser tanpa perlu install apapun. Editor real-time dengan preview
+                        langsung.</p>
+                </article>
+
+                <article class="feature-card reveal">
+                    <div class="feature-icon orange">👨‍🏫</div>
+                    <h3>Mentor Berpengalaman</h3>
+                    <p>Dibimbing langsung oleh senior developer dengan pengalaman 10+ tahun di industri teknologi.</p>
+                </article>
+
+                <article class="feature-card reveal">
+                    <div class="feature-icon red">🏆</div>
+                    <h3>Sertifikat Resmi</h3>
+                    <p>Dapatkan sertifikat yang diakui industri setelah menyelesaikan setiap kursus dan project.</p>
+                </article>
+
+                <article class="feature-card reveal">
+                    <div class="feature-icon blue">💼</div>
+                    <h3>Project-Based Learning</h3>
+                    <p>Bangun portfolio nyata dengan mengerjakan 10+ project yang bisa dipamerkan ke recruiter.</p>
+                </article>
+
+                <article class="feature-card reveal">
+                    <div class="feature-icon yellow">🔄</div>
+                    <h3>Akses Seumur Hidup</h3>
+                    <p>Sekali bayar, akses materi selamanya termasuk update konten baru dan komunitas eksklusif.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== COURSES ==================== -->
+    <section class="courses section" id="courses">
+        <div class="container">
+            <div class="courses-header reveal">
+                <span class="section-label">📚 Kursus Populer</span>
+                <h2 class="section-title">Pilih <span class="gradient-text">Jalur Belajar</span> Anda</h2>
+                <p class="section-subtitle">Dari pemula hingga advanced, kami punya kursus yang tepat untuk setiap level
+                    kemampuan Anda.</p>
+            </div>
+
+            <div class="courses-grid">
+                <article class="course-card reveal">
+                    <div class="course-thumbnail html">
+                        🌐
+                        <span class="course-badge bestseller">Bestseller</span>
+                    </div>
+                    <div class="course-info">
+                        <h3>HTML & CSS Masterclass</h3>
+                        <p>Kuasai dasar web development dari HTML semantic hingga CSS modern dengan Flexbox dan Grid.
+                        </p>
+                        <div class="course-meta">
+                            <span>📖 24 Modul</span>
+                            <span>⏱ 40 Jam</span>
+                            <span>⭐ 4.9</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="course-price">Rp 299K <span class="original">Rp 599K</span></span>
+                            <a href="#" class="btn btn-primary">Daftar</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="course-card reveal">
+                    <div class="course-thumbnail js">
+                        ⚡
+                        <span class="course-badge popular">Popular</span>
+                    </div>
+                    <div class="course-info">
+                        <h3>JavaScript Lengkap</h3>
+                        <p>Dari dasar JavaScript hingga ES6+, async/await, DOM manipulation, dan project nyata.</p>
+                        <div class="course-meta">
+                            <span>📖 36 Modul</span>
+                            <span>⏱ 60 Jam</span>
+                            <span>⭐ 4.9</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="course-price">Rp 399K <span class="original">Rp 799K</span></span>
+                            <a href="#" class="btn btn-primary">Daftar</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="course-card reveal">
+                    <div class="course-thumbnail python">
+                        🐍
+                        <span class="course-badge new">New</span>
+                    </div>
+                    <div class="course-info">
+                        <h3>Python untuk Pemula</h3>
+                        <p>Belajar Python dari nol, data types, loops, functions, OOP, hingga web scraping.</p>
+                        <div class="course-meta">
+                            <span>📖 28 Modul</span>
+                            <span>⏱ 45 Jam</span>
+                            <span>⭐ 4.8</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="course-price">Rp 349K <span class="original">Rp 699K</span></span>
+                            <a href="#" class="btn btn-primary">Daftar</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="course-card reveal">
+                    <div class="course-thumbnail react">
+                        ⚛️
+                    </div>
+                    <div class="course-info">
+                        <h3>React.js Frontend</h3>
+                        <p>Bangun aplikasi web modern dengan React, Hooks, State Management, dan API integration.</p>
+                        <div class="course-meta">
+                            <span>📖 32 Modul</span>
+                            <span>⏱ 50 Jam</span>
+                            <span>⭐ 4.9</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="course-price">Rp 449K <span class="original">Rp 899K</span></span>
+                            <a href="#" class="btn btn-primary">Daftar</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="course-card reveal">
+                    <div class="course-thumbnail node">
+                        🟢
+                    </div>
+                    <div class="course-info">
+                        <h3>Node.js Backend</h3>
+                        <p>Kuasai backend development dengan Express.js, database, authentication, dan deployment.</p>
+                        <div class="course-meta">
+                            <span>📖 30 Modul</span>
+                            <span>⏱ 48 Jam</span>
+                            <span>⭐ 4.8</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="course-price">Rp 449K <span class="original">Rp 899K</span></span>
+                            <a href="#" class="btn btn-primary">Daftar</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="course-card reveal">
+                    <div class="course-thumbnail fullstack">
+                        🔥
+                        <span class="course-badge bestseller">Bestseller</span>
+                    </div>
+                    <div class="course-info">
+                        <h3>Full-Stack Bootcamp</h3>
+                        <p>Paket lengkap: HTML, CSS, JS, React, Node.js, Database. Dari nol hingga siap kerja!</p>
+                        <div class="course-meta">
+                            <span>📖 120 Modul</span>
+                            <span>⏱ 200 Jam</span>
+                            <span>⭐ 5.0</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="course-price">Rp 999K <span class="original">Rp 2.5JT</span></span>
+                            <a href="#" class="btn btn-accent">Daftar</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PLAYGROUND ==================== -->
+    <section class="playground section" id="playground">
+        <div class="container">
+            <div class="playground-header reveal">
+                <span class="section-label">🎮 Code Playground</span>
+                <h2 class="section-title">Coba Kode <span class="gradient-text">Langsung di Sini</span></h2>
+                <p class="section-subtitle">Edit kode di sebelah kiri dan lihat hasilnya secara real-time di sebelah
+                    kanan. Tidak perlu install apapun!</p>
+            </div>
+
+            <div class="playground-container reveal">
+                <div class="playground-toolbar">
+                    <div class="playground-tabs">
+                        <button class="playground-tab active" data-tab="html" onclick="switchTab('html')">HTML</button>
+                        <button class="playground-tab" data-tab="css" onclick="switchTab('css')">CSS</button>
+                        <button class="playground-tab" data-tab="js" onclick="switchTab('js')">JavaScript</button>
+                    </div>
+                    <div class="playground-actions">
+                        <button class="btn-reset" onclick="resetCode()">↺ Reset</button>
+                        <button class="btn-run" onclick="runCode()">▶ Run Code</button>
+                    </div>
+                </div>
+
+                <div class="playground-body">
+                    <div class="playground-editor">
+                        <textarea id="htmlEditor" spellcheck="false" placeholder="Ketik HTML di sini...">&lt;div class="container"&gt;
+  &lt;h1&gt;🚀 Halo CodeMaster!&lt;/h1&gt;
+  &lt;p&gt;Ini adalah playground interaktif.&lt;/p&gt;
+  &lt;p&gt;Coba edit kode ini dan lihat hasilnya!&lt;/p&gt;
+
+  &lt;div class="cards"&gt;
+    &lt;div class="card"&gt;
+      &lt;h3&gt;📚 Belajar&lt;/h3&gt;
+      &lt;p&gt;Materi lengkap&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="card"&gt;
+      &lt;h3&gt;💻 Praktek&lt;/h3&gt;
+      &lt;p&gt;Langsung coding&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="card"&gt;
+      &lt;h3&gt;🏆 Mahir&lt;/h3&gt;
+      &lt;p&gt;Siap kerja!&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;button onclick="changeColor()"&gt;
+    🎨 Ubah Warna Background
+  &lt;/button&gt;
+&lt;/div&gt;</textarea>
+                        <textarea id="cssEditor" spellcheck="false" style="display:none;"
+                            placeholder="Ketik CSS di sini...">* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.container {
+  text-align: center;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  background: linear-gradient(to right, #6C3CE1, #06D6A0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p {
+  color: #a0a0b8;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.cards {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 24px 32px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s;
+  min-width: 150px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 0.9rem;
+}
+
+button {
+  background: linear-gradient(135deg, #6C3CE1, #06D6A0);
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(108, 60, 225, 0.4);
+}</textarea>
+                        <textarea id="jsEditor" spellcheck="false" style="display:none;"
+                            placeholder="Ketik JavaScript di sini...">const colors = [
+  'linear-gradient(135deg, #0f0c29, #302b63, #24243e)',
+  'linear-gradient(135deg, #1a1a2e, #16213e, #0f3460)',
+  'linear-gradient(135deg, #0d1117, #161b22, #21262d)',
+  'linear-gradient(135deg, #2d1b69, #11998e)',
+  'linear-gradient(135deg, #fc466b, #3f5efb)'
+];
+let colorIndex = 0;
+
+function changeColor() {
+  colorIndex = (colorIndex + 1) % colors.length;
+  document.body.style.background = colors[colorIndex];
+}</textarea>
+                    </div>
+                    <div class="playground-preview">
+                        <span class="playground-preview-label">Preview</span>
+                        <iframe id="previewFrame" title="Code Preview"></iframe>
+                    </div>
+                </div>
+
+                <div class="playground-templates">
+                    <span>Template:</span>
+                    <button class="template-btn" onclick="loadTemplate('landing')">Landing Page</button>
+                    <button class="template-btn" onclick="loadTemplate('animation')">Animasi CSS</button>
+                    <button class="template-btn" onclick="loadTemplate('calculator')">Kalkulator</button>
+                    <button class="template-btn" onclick="loadTemplate('card')">Profile Card</button>
+                    <button class="template-btn" onclick="loadTemplate('game')">Mini Game</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS ==================== -->
+    <section class="testimonials section" id="testimonials">
+        <div class="container">
+            <div class="testimonials-header reveal">
+                <span class="section-label">💬 Testimoni</span>
+                <h2 class="section-title">Apa Kata <span class="gradient-text">Alumni Kami</span></h2>
+                <p class="section-subtitle">Ribuan siswa telah merasakan manfaat belajar di CodeMaster Academy.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <article class="testimonial-card reveal">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Dulu saya sama sekali tidak bisa coding. Setelah 3 bulan belajar di
+                        CodeMaster, sekarang saya sudah bekerja sebagai Frontend Developer di startup. Playground-nya
+                        sangat membantu!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar av1">AR</div>
+                        <div class="testimonial-info">
+                            <h4>Andi Rahmawan</h4>
+                            <p>Frontend Developer di TechStartup</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="testimonial-card reveal">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Kurikulumnya sangat terstruktur dan up-to-date. Mentor-mentornya juga
+                        sangat responsif. Saya bisa belajar sambil tetap bekerja full-time. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar av2">SN</div>
+                        <div class="testimonial-info">
+                            <h4>Sinta Nurhayati</h4>
+                            <p>Full-Stack Developer di BUMN</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="testimonial-card reveal">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Playground interaktifnya game-changer! Saya bisa langsung coba kode
+                        tanpa setup ribet. Materi Full-Stack Bootcamp sangat komprehensif dan worth every penny."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar av3">BW</div>
+                        <div class="testimonial-info">
+                            <h4>Budi Wicaksono</h4>
+                            <p>Software Engineer di Unicorn</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PRICING ==================== -->
+    <section class="pricing section" id="pricing">
+        <div class="container">
+            <div class="pricing-header reveal">
+                <span class="section-label">💰 Harga</span>
+                <h2 class="section-title">Investasi untuk <span class="gradient-text">Masa Depan Anda</span></h2>
+                <p class="section-subtitle">Pilih paket yang sesuai dengan kebutuhan dan budget Anda. Semua paket
+                    termasuk akses seumur hidup.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="pricing-card reveal">
+                    <h3>Starter</h3>
+                    <p class="pricing-desc">Cocok untuk yang baru mulai belajar coding</p>
+                    <div class="pricing-price">
+                        <span class="currency">Rp</span><span class="amount">199K</span>
+                        <span class="period">/bulan</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> Akses 5 Kursus Dasar</li>
+                        <li><span class="check">✓</span> Playground Interaktif</li>
+                        <li><span class="check">✓</span> Forum Komunitas</li>
+                        <li><span class="check">✓</span> Sertifikat Digital</li>
+                        <li><span class="cross">✕</span> Mentorship 1-on-1</li>
+                        <li><span class="cross">✕</span> Project Review</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Mulai Starter</a>
+                </div>
+
+                <div class="pricing-card featured reveal">
+                    <span class="pricing-popular">🔥 Paling Populer</span>
+                    <h3>Professional</h3>
+                    <p class="pricing-desc">Untuk yang serius ingin jadi developer</p>
+                    <div class="pricing-price">
+                        <span class="currency">Rp</span><span class="amount">499K</span>
+                        <span class="period">/bulan</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> Akses Semua Kursus</li>
+                        <li><span class="check">✓</span> Playground Pro</li>
+                        <li><span class="check">✓</span> Komunitas Eksklusif</li>
+                        <li><span class="check">✓</span> Sertifikat Digital</li>
+                        <li><span class="check">✓</span> Mentorship 1-on-1</li>
+                        <li><span class="check">✓</span> Project Review</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Mulai Professional</a>
+                </div>
+
+                <div class="pricing-card reveal">
+                    <h3>Bootcamp</h3>
+                    <p class="pricing-desc">Program intensif siap kerja dalam 6 bulan</p>
+                    <div class="pricing-price">
+                        <span class="currency">Rp</span><span class="amount">4.9JT</span>
+                        <span class="period">/program</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> Semua Fitur Pro</li>
+                        <li><span class="check">✓</span> 6 Bulan Program Intensif</li>
+                        <li><span class="check">✓</span> Career Coaching</li>
+                        <li><span class="check">✓</span> Job Placement Support</li>
+                        <li><span class="check">✓</span> Portfolio Project</li>
+                        <li><span class="check">✓</span> Garansi Kerja*</li>
+                    </ul>
+                    <a href="#" class="btn btn-accent">Daftar Bootcamp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FAQ ==================== -->
+    <section class="faq section" id="faq">
+        <div class="container">
+            <div class="faq-header reveal">
+                <span class="section-label">❓ FAQ</span>
+                <h2 class="section-title">Pertanyaan yang <span class="gradient-text">Sering Ditanyakan</span></h2>
+                <p class="section-subtitle">Temukan jawaban untuk pertanyaan umum tentang CodeMaster Academy.</p>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Apakah saya perlu pengalaman coding sebelumnya?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Tidak sama sekali! Kursus kami dirancang untuk pemula absolut. Kami mulai dari konsep paling
+                            dasar dan secara bertahap meningkatkan kompleksitas. Yang Anda butuhkan hanyalah kemauan
+                            untuk belajar dan komputer dengan koneksi internet.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Berapa lama saya bisa mengakses materi kursus?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Selamanya! Sekali Anda berlangganan atau membeli kursus, Anda mendapatkan akses seumur hidup
+                            termasuk semua update materi di masa depan. Belajarlah sesuai kecepatan Anda sendiri tanpa
+                            tekanan.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Apa itu Code Playground?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Code Playground adalah editor kode interaktif yang terintegrasi langsung di browser. Anda
+                            bisa menulis HTML, CSS, dan JavaScript, lalu melihat hasilnya secara real-time tanpa perlu
+                            menginstall software apapun. Sangat cocok untuk latihan dan eksperimen.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Apakah ada garansi uang kembali?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Ya! Kami memberikan garansi uang kembali 30 hari tanpa syarat. Jika Anda merasa kursus kami
+                            tidak sesuai ekspektasi, hubungi tim support kami dan kami akan mengembalikan pembayaran
+                            Anda secara penuh.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Bagaimana sistem mentorship bekerja?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Paket Professional dan Bootcamp termasuk sesi mentorship 1-on-1 dengan developer
+                            berpengalaman. Anda bisa booking sesi sesuai jadwal yang tersedia, bertanya langsung, code
+                            review, dan mendapatkan bimbingan karir secara personal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA SECTION ==================== -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box reveal">
+                <h2>Siap Mulai Perjalanan <span class="gradient-text">Coding Anda?</span></h2>
+                <p>Bergabung dengan 15,000+ siswa lainnya dan mulai belajar coding hari ini. Gratis untuk memulai!</p>
+                <div class="cta-buttons">
+                    <a href="#pricing" class="btn btn-primary">🚀 Mulai Belajar Gratis</a>
+                    <a href="#playground" class="btn btn-secondary">🎮 Coba Playground</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="navbar-logo">
+                        <div class="logo-icon">⚡</div>
+                        CodeMaster
+                    </a>
+                    <p>Platform belajar coding online terlengkap di Indonesia. Kuasai programming dari nol hingga siap
+                        kerja dengan metode pembelajaran interaktif.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="YouTube">▶️</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Kursus</h4>
+                    <ul>
+                        <li><a href="#">HTML & CSS</a></li>
+                        <li><a href="#">JavaScript</a></li>
+                        <li><a href="#">Python</a></li>
+                        <li><a href="#">React.js</a></li>
+                        <li><a href="#">Node.js</a></li>
+                        <li><a href="#">Full-Stack</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Perusahaan</h4>
+                    <ul>
+                        <li><a href="pages/about.html">Tentang Kami</a></li>
+                        <li><a href="pages/careers.html">Karir</a></li>
+                        <li><a href="pages/blog.html">Blog</a></li>
+                        <li><a href="pages/mentors.html">Mentor</a></li>
+                        <li><a href="pages/partners.html">Partner</a></li>
+                        <li><a href="pages/contact.html">Kontak</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Pusat Bantuan</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="legal/privacy.html">Kebijakan Privasi</a></li>
+                        <li><a href="#">Syarat & Ketentuan</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 CodeMaster Academy. All rights reserved.</p>
+                <p>Dibuat dengan ❤️ di Indonesia</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        // ===== NAVBAR SCROLL EFFECT =====
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // ===== MOBILE MENU =====
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        }
+
+        // ===== SCROLL REVEAL ANIMATION =====
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // ===== CODE PLAYGROUND =====
+        const htmlEditor = document.getElementById('htmlEditor');
+        const cssEditor = document.getElementById('cssEditor');
+        const jsEditor = document.getElementById('jsEditor');
+        const previewFrame = document.getElementById('previewFrame');
+
+        function switchTab(tab) {
+            document.querySelectorAll('.playground-tab').forEach(t => t.classList.remove('active'));
+            document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
+
+            htmlEditor.style.display = tab === 'html' ? 'block' : 'none';
+            cssEditor.style.display = tab === 'css' ? 'block' : 'none';
+            jsEditor.style.display = tab === 'js' ? 'block' : 'none';
+        }
+
+        function runCode() {
+            const html = htmlEditor.value;
+            const css = cssEditor.value;
+            const js = jsEditor.value;
+
+            const combinedCode = `
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <meta charset="UTF-8">
+                    <style>${css}</style>
+                </head>
+                <body>
+                    ${html}
+                    <script>${js}<\/script>
+                </body>
+                </html>
+            `;
+
+            const iframe = previewFrame;
+            iframe.srcdoc = combinedCode;
+        }
+
+        function resetCode() {
+            htmlEditor.value = htmlEditor.defaultValue || '';
+            cssEditor.value = cssEditor.defaultValue || '';
+            jsEditor.value = jsEditor.defaultValue || '';
+            runCode();
+        }
+
+        // Auto-run on load
+        window.addEventListener('DOMContentLoaded', runCode);
+
+        // Auto-run on editor input (debounced)
+        let autoRunTimeout;
+        [htmlEditor, cssEditor, jsEditor].forEach(editor => {
+            editor.addEventListener('input', () => {
+                clearTimeout(autoRunTimeout);
+                autoRunTimeout = setTimeout(runCode, 800);
+            });
+
+            // Tab support
+            editor.addEventListener('keydown', (e) => {
+                if (e.key === 'Tab') {
+                    e.preventDefault();
+                    const start = editor.selectionStart;
+                    const end = editor.selectionEnd;
+                    editor.value = editor.value.substring(0, start) + '  ' + editor.value.substring(end);
+                    editor.selectionStart = editor.selectionEnd = start + 2;
+                }
+            });
+        });
+
+        // ===== PLAYGROUND TEMPLATES =====
+        const templates = {
+            landing: {
+                html: `<div class="landing">\n  <h1>🚀 Selamat Datang!</h1>\n  <p>Ini adalah template landing page sederhana.</p>\n  <div class="features">\n    <div class="feature">⚡ Cepat</div>\n    <div class="feature">🎨 Indah</div>\n    <div class="feature">📱 Responsif</div>\n  </div>\n  <button onclick="alert('Terima kasih!')">Daftar Sekarang</button>\n</div>`,
+                css: `* { margin: 0; padding: 0; box-sizing: border-box; }\nbody {\n  font-family: 'Segoe UI', sans-serif;\n  background: linear-gradient(135deg, #667eea, #764ba2);\n  min-height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  color: white;\n}\n.landing { text-align: center; padding: 40px; }\nh1 { font-size: 3rem; margin-bottom: 12px; }\np { font-size: 1.2rem; opacity: 0.9; margin-bottom: 30px; }\n.features { display: flex; gap: 16px; justify-content: center; margin-bottom: 30px; }\n.feature {\n  background: rgba(255,255,255,0.15);\n  padding: 12px 24px;\n  border-radius: 50px;\n  backdrop-filter: blur(10px);\n}\nbutton {\n  background: white;\n  color: #764ba2;\n  border: none;\n  padding: 16px 40px;\n  border-radius: 50px;\n  font-size: 1.1rem;\n  font-weight: 700;\n  cursor: pointer;\n  transition: transform 0.2s;\n}\nbutton:hover { transform: scale(1.05); }`,
+                js: `// JavaScript untuk landing page\nconsole.log("Landing page loaded! 🚀");`
+            },
+            animation: {
+                html: `<div class="scene">\n  <div class="cube">\n    <div class="face front">Front</div>\n    <div class="face back">Back</div>\n    <div class="face right">Right</div>\n    <div class="face left">Left</div>\n    <div class="face top">Top</div>\n    <div class="face bottom">Bottom</div>\n  </div>\n</div>`,
+                css: `* { margin: 0; padding: 0; box-sizing: border-box; }\nbody {\n  background: #0a0a1a;\n  min-height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  perspective: 600px;\n}\n.scene { width: 150px; height: 150px; }\n.cube {\n  width: 100%; height: 100%;\n  position: relative;\n  transform-style: preserve-3d;\n  animation: rotate 6s infinite linear;\n}\n.face {\n  position: absolute;\n  width: 150px; height: 150px;\n  display: flex; align-items: center; justify-content: center;\n  font-size: 1.2rem; font-weight: 700; color: white;\n  border: 2px solid rgba(255,255,255,0.3);\n  border-radius: 8px;\n}\n.front  { background: rgba(108,60,225,0.7); transform: translateZ(75px); }\n.back   { background: rgba(6,214,160,0.7); transform: rotateY(180deg) translateZ(75px); }\n.right  { background: rgba(255,107,107,0.7); transform: rotateY(90deg) translateZ(75px); }\n.left   { background: rgba(255,140,66,0.7); transform: rotateY(-90deg) translateZ(75px); }\n.top    { background: rgba(59,130,246,0.7); transform: rotateX(90deg) translateZ(75px); }\n.bottom { background: rgba(250,204,21,0.7); transform: rotateX(-90deg) translateZ(75px); }\n@keyframes rotate {\n  from { transform: rotateX(0) rotateY(0); }\n  to { transform: rotateX(360deg) rotateY(360deg); }\n}`,
+                js: `// 3D Cube Animation with CSS\nconsole.log("3D Cube rotating! 🎲");`
+            },
+            calculator: {
+                html: `<div class="calc">\n  <input type="text" id="display" readonly value="0">\n  <div class="buttons">\n    <button onclick="clearDisplay()" class="btn-clear">C</button>\n    <button onclick="appendOp('/')">/</button>\n    <button onclick="appendOp('*')">×</button>\n    <button onclick="appendOp('-')">-</button>\n    <button onclick="appendNum('7')">7</button>\n    <button onclick="appendNum('8')">8</button>\n    <button onclick="appendNum('9')">9</button>\n    <button onclick="appendOp('+')">+</button>\n    <button onclick="appendNum('4')">4</button>\n    <button onclick="appendNum('5')">5</button>\n    <button onclick="appendNum('6')">6</button>\n    <button onclick="calculate()" class="btn-equals">=</button>\n    <button onclick="appendNum('1')">1</button>\n    <button onclick="appendNum('2')">2</button>\n    <button onclick="appendNum('3')">3</button>\n    <button onclick="appendNum('0')">0</button>\n  </div>\n</div>`,
+                css: `* { margin: 0; padding: 0; box-sizing: border-box; }\nbody {\n  background: #1a1a2e;\n  min-height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-family: 'Segoe UI', sans-serif;\n}\n.calc {\n  background: #252540;\n  border-radius: 20px;\n  padding: 24px;\n  box-shadow: 0 20px 60px rgba(0,0,0,0.5);\n  width: 300px;\n}\n#display {\n  width: 100%;\n  background: #0f0f1a;\n  border: none;\n  color: #06D6A0;\n  font-size: 2rem;\n  padding: 16px;\n  border-radius: 12px;\n  text-align: right;\n  margin-bottom: 16px;\n  font-family: 'JetBrains Mono', monospace;\n}\n.buttons {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 8px;\n}\nbutton {\n  padding: 18px;\n  border: none;\n  border-radius: 12px;\n  font-size: 1.2rem;\n  font-weight: 600;\n  cursor: pointer;\n  background: #2d2d4a;\n  color: white;\n  transition: all 0.15s;\n}\nbutton:hover { background: #3d3d5a; transform: scale(1.05); }\n.btn-clear { background: #FF6B6B; color: white; }\n.btn-equals { background: linear-gradient(135deg, #6C3CE1, #06D6A0); grid-column: span 1; }`,
+                js: `let expression = '';\n\nfunction appendNum(n) {\n  expression += n;\n  document.getElementById('display').value = expression;\n}\n\nfunction appendOp(op) {\n  expression += ' ' + op + ' ';\n  document.getElementById('display').value = expression;\n}\n\nfunction clearDisplay() {\n  expression = '';\n  document.getElementById('display').value = '0';\n}\n\nfunction calculate() {\n  try {\n    const result = eval(expression);\n    document.getElementById('display').value = result;\n    expression = String(result);\n  } catch {\n    document.getElementById('display').value = 'Error';\n    expression = '';\n  }\n}`
+            },
+            card: {
+                html: `<div class="profile-card">\n  <div class="card-bg"></div>\n  <div class="avatar">👨‍💻</div>\n  <h2>Alex Developer</h2>\n  <p class="role">Full-Stack Developer</p>\n  <p class="bio">Passionate about building beautiful web experiences. 5+ years of coding experience.</p>\n  <div class="stats">\n    <div class="stat"><strong>150</strong><span>Projects</span></div>\n    <div class="stat"><strong>2.5K</strong><span>Followers</span></div>\n    <div class="stat"><strong>4.9</strong><span>Rating</span></div>\n  </div>\n  <button onclick="alert('Followed! 🎉')">Follow</button>\n</div>`,
+                css: `* { margin: 0; padding: 0; box-sizing: border-box; }\nbody {\n  background: #0f0f1a;\n  min-height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-family: 'Segoe UI', sans-serif;\n}\n.profile-card {\n  background: #1a1a2e;\n  border: 1px solid rgba(255,255,255,0.08);\n  border-radius: 24px;\n  padding: 40px;\n  text-align: center;\n  width: 340px;\n  position: relative;\n  overflow: hidden;\n}\n.card-bg {\n  position: absolute;\n  top: 0; left: 0; right: 0;\n  height: 120px;\n  background: linear-gradient(135deg, #6C3CE1, #06D6A0);\n  opacity: 0.3;\n}\n.avatar {\n  font-size: 4rem;\n  margin-top: 20px;\n  position: relative;\n  z-index: 1;\n}\nh2 { color: white; margin: 12px 0 4px; font-size: 1.4rem; }\n.role { color: #06D6A0; font-weight: 600; margin-bottom: 12px; }\n.bio { color: #9CA3AF; font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; }\n.stats {\n  display: flex;\n  justify-content: space-around;\n  margin-bottom: 24px;\n  padding: 16px 0;\n  border-top: 1px solid rgba(255,255,255,0.06);\n  border-bottom: 1px solid rgba(255,255,255,0.06);\n}\n.stat { display: flex; flex-direction: column; }\n.stat strong { color: white; font-size: 1.2rem; }\n.stat span { color: #9CA3AF; font-size: 0.8rem; margin-top: 2px; }\nbutton {\n  background: linear-gradient(135deg, #6C3CE1, #06D6A0);\n  color: white;\n  border: none;\n  padding: 12px 40px;\n  border-radius: 50px;\n  font-size: 1rem;\n  font-weight: 600;\n  cursor: pointer;\n  transition: transform 0.2s;\n}\nbutton:hover { transform: scale(1.05); }`,
+                js: `// Profile Card - No JS needed for basic functionality\nconsole.log("Profile card loaded! 👨‍💻");`
+            },
+            game: {
+                html: `<div class="game">\n  <h1>🎯 Tebak Angka!</h1>\n  <p>Saya memikirkan angka antara 1-100</p>\n  <input type="number" id="guess" placeholder="Masukkan tebakan..." min="1" max="100">\n  <button onclick="checkGuess()">Tebak!</button>\n  <button onclick="resetGame()" class="btn-reset-game">🔄 Main Ulang</button>\n  <p id="message" class="message"></p>\n  <p id="attempts" class="attempts"></p>\n</div>`,
+                css: `* { margin: 0; padding: 0; box-sizing: border-box; }\nbody {\n  background: linear-gradient(135deg, #1a1a2e, #16213e);\n  min-height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-family: 'Segoe UI', sans-serif;\n  color: white;\n}\n.game {\n  text-align: center;\n  background: rgba(255,255,255,0.05);\n  padding: 40px;\n  border-radius: 24px;\n  border: 1px solid rgba(255,255,255,0.1);\n  backdrop-filter: blur(10px);\n  width: 380px;\n}\nh1 { font-size: 2rem; margin-bottom: 8px; }\np { color: #a0a0b8; margin-bottom: 20px; }\ninput {\n  width: 100%;\n  padding: 14px;\n  background: rgba(255,255,255,0.08);\n  border: 1px solid rgba(255,255,255,0.15);\n  border-radius: 12px;\n  color: white;\n  font-size: 1.2rem;\n  text-align: center;\n  margin-bottom: 12px;\n  outline: none;\n}\ninput:focus { border-color: #6C3CE1; }\nbutton {\n  background: linear-gradient(135deg, #6C3CE1, #06D6A0);\n  color: white;\n  border: none;\n  padding: 14px 32px;\n  border-radius: 12px;\n  font-size: 1rem;\n  font-weight: 600;\n  cursor: pointer;\n  margin: 4px;\n  transition: transform 0.2s;\n}\nbutton:hover { transform: scale(1.05); }\n.btn-reset-game { background: rgba(255,255,255,0.1); }\n.message {\n  margin-top: 16px;\n  font-size: 1.1rem;\n  font-weight: 600;\n  min-height: 30px;\n}\n.attempts { color: #9CA3AF; font-size: 0.9rem; margin-top: 8px; }`,
+                js: `let secretNumber = Math.floor(Math.random() * 100) + 1;\nlet attempts = 0;\n\nfunction checkGuess() {\n  const guess = parseInt(document.getElementById('guess').value);\n  const msg = document.getElementById('message');\n  attempts++;\n  \n  if (isNaN(guess) || guess < 1 || guess > 100) {\n    msg.textContent = '⚠️ Masukkan angka 1-100!';\n    msg.style.color = '#FF8C42';\n    return;\n  }\n  \n  if (guess === secretNumber) {\n    msg.textContent = '🎉 Benar! Angkanya ' + secretNumber + '!';\n    msg.style.color = '#06D6A0';\n  } else if (guess < secretNumber) {\n    msg.textContent = '⬆️ Terlalu rendah!';\n    msg.style.color = '#82AAFF';\n  } else {\n    msg.textContent = '⬇️ Terlalu tinggi!';\n    msg.style.color = '#FF5370';\n  }\n  \n  document.getElementById('attempts').textContent = 'Percobaan ke-' + attempts;\n}\n\nfunction resetGame() {\n  secretNumber = Math.floor(Math.random() * 100) + 1;\n  attempts = 0;\n  document.getElementById('guess').value = '';\n  document.getElementById('message').textContent = '';\n  document.getElementById('attempts').textContent = '';\n}`
+            }
+        };
+
+        function loadTemplate(name) {
+            const template = templates[name];
+            if (!template) return;
+
+            htmlEditor.value = template.html;
+            cssEditor.value = template.css;
+            jsEditor.value = template.js;
+            runCode();
+        }
+
+        // ===== FAQ ACCORDION =====
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            const isActive = item.classList.contains('active');
+
+            // Close all
+            document.querySelectorAll('.faq-item').forEach(faq => {
+                faq.classList.remove('active');
+            });
+
+            // Open clicked if it wasn't active
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+
+        // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

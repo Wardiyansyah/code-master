@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - CodeMaster Academy</title>
+    <meta name="description"
+        content="Artikel, tutorial, dan tips programming terbaru dari CodeMaster Academy. Pelajari coding dari para ahli industri.">
+    <link rel="canonical" href="https://www.codemasteracademy.id/pages/blog.html">
+    <link rel="icon" type="image/svg+xml"
+        href="../data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6C3CE1;
+            --primary-dark: #5A2BC4;
+            --primary-light: #8B5CF6;
+            --secondary: #06D6A0;
+            --secondary-dark: #05B88A;
+            --accent: #FF6B6B;
+            --accent-orange: #FF8C42;
+            --dark: #0F0F1A;
+            --dark-2: #1A1A2E;
+            --dark-3: #252540;
+            --dark-4: #2D2D4A;
+            --gray-1: #6B7280;
+            --gray-2: #9CA3AF;
+            --gray-3: #D1D5DB;
+            --light: #F8F9FC;
+            --white: #FFFFFF;
+            --gradient-1: linear-gradient(135deg, #6C3CE1 0%, #06D6A0 100%);
+            --gradient-2: linear-gradient(135deg, #FF6B6B 0%, #FF8C42 100%);
+            --gradient-3: linear-gradient(135deg, #6C3CE1 0%, #8B5CF6 50%, #06D6A0 100%);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, .1);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, .15);
+            --shadow-lg: 0 8px 40px rgba(0, 0, 0, .2);
+            --shadow-glow: 0 0 30px rgba(108, 60, 225, .3);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --transition: all .3s cubic-bezier(.4, 0, .2, 1)
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px
+        }
+
+        .section {
+            padding: 80px 0
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 16px
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray-2);
+            max-width: 600px;
+            line-height: 1.7
+        }
+
+        .gradient-text {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(108, 60, 225, .4)
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(108, 60, 225, .5)
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, .08);
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, .15)
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, .15);
+            transform: translateY(-2px)
+        }
+
+        .btn-sm {
+            padding: 8px 20px;
+            font-size: .9rem
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 0;
+            transition: var(--transition);
+            background: transparent
+        }
+
+        .navbar.scrolled {
+            background: rgba(15, 15, 26, .9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, .05);
+            padding: 12px 0
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.4rem
+        }
+
+        .navbar-logo .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-1);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem
+        }
+
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none
+        }
+
+        .navbar-menu a {
+            color: var(--gray-2);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: .95rem;
+            transition: var(--transition);
+            position: relative
+        }
+
+        .navbar-menu a:hover {
+            color: var(--white)
+        }
+
+        .navbar-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-1);
+            transition: var(--transition);
+            border-radius: 2px
+        }
+
+        .navbar-menu a:hover::after {
+            width: 100%
+        }
+
+        .navbar-cta {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .navbar-cta .btn {
+            padding: 10px 24px;
+            font-size: .9rem
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 8px
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: var(--transition)
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 15, 26, .98);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition)
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            pointer-events: all
+        }
+
+        .mobile-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 600;
+            transition: var(--transition)
+        }
+
+        .mobile-menu a:hover {
+            color: var(--primary-light)
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer
+        }
+
+        /* Blog Hero */
+        .blog-hero {
+            padding: 120px 0 60px;
+            background: var(--dark-2);
+            border-bottom: 1px solid rgba(255, 255, 255, .05)
+        }
+
+        .blog-hero .container {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto
+        }
+
+        .blog-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px
+        }
+
+        .blog-hero p {
+            font-size: 1.15rem;
+            color: var(--gray-2);
+            margin-bottom: 32px;
+            line-height: 1.8
+        }
+
+        .blog-search {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto
+        }
+
+        .blog-search input {
+            width: 100%;
+            padding: 16px 24px 16px 48px;
+            background: var(--dark-3);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 50px;
+            color: var(--white);
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition)
+        }
+
+        .blog-search input:focus {
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 3px rgba(108, 60, 225, .2)
+        }
+
+        .blog-search input::placeholder {
+            color: var(--gray-1)
+        }
+
+        .blog-search .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray-2);
+            font-size: 1.2rem
+        }
+
+        .blog-tags {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 24px
+        }
+
+        .blog-tag {
+            padding: 6px 16px;
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 50px;
+            color: var(--gray-2);
+            font-size: .85rem;
+            cursor: pointer;
+            transition: var(--transition)
+        }
+
+        .blog-tag:hover,
+        .blog-tag.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary)
+        }
+
+        /* Blog Layout */
+        .blog-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 48px;
+            margin-top: 48px
+        }
+
+        /* Featured Post */
+        .featured-post {
+            background: var(--dark-2);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            margin-bottom: 32px;
+            transition: var(--transition)
+        }
+
+        .featured-post:hover {
+            border-color: rgba(108, 60, 225, .3);
+            transform: translateY(-2px)
+        }
+
+        .featured-post .post-thumbnail {
+            height: 280px;
+            background: var(--gradient-3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative
+        }
+
+        .featured-post .post-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            padding: 6px 16px;
+            background: var(--accent);
+            color: var(--white);
+            border-radius: 50px;
+            font-size: .8rem;
+            font-weight: 600;
+            text-transform: uppercase
+        }
+
+        .featured-post .post-content {
+            padding: 32px
+        }
+
+        .post-meta {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 12px;
+            font-size: .9rem;
+            color: var(--gray-2)
+        }
+
+        .post-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px
+        }
+
+        .post-category {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(108, 60, 225, .15);
+            color: var(--primary-light);
+            border-radius: 50px;
+            font-size: .8rem;
+            font-weight: 500;
+            margin-bottom: 12px
+        }
+
+        .featured-post h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.3
+        }
+
+        .featured-post h2 a {
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition)
+        }
+
+        .featured-post h2 a:hover {
+            color: var(--primary-light)
+        }
+
+        .featured-post p {
+            color: var(--gray-2);
+            margin-bottom: 20px;
+            line-height: 1.7
+        }
+
+        .post-author {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gradient-1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: .9rem
+        }
+
+        .author-info span {
+            display: block
+        }
+
+        .author-info .name {
+            font-weight: 600;
+            font-size: .95rem
+        }
+
+        .author-info .date {
+            font-size: .85rem;
+            color: var(--gray-2)
+        }
+
+        /* Article Grid */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px
+        }
+
+        .article-card {
+            background: var(--dark-2);
+            border: 1px solid rgba(255, 255, 255, .06);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column
+        }
+
+        .article-card:hover {
+            border-color: rgba(108, 60, 225, .3);
+            transform: translateY(-4px)
+        }
+
+        .article-card .post-thumbnail {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            background: var(--dark-3)
+        }
+
+        .article-card.html {
+            background: linear-gradient(135deg, rgba(228, 77, 38, .2), rgba(241, 101, 41, .2))
+        }
+
+        .article-card.js {
+            background: linear-gradient(135deg, rgba(247, 223, 30, .2), rgba(240, 219, 79, .2))
+        }
+
+        .article-card.python {
+            background: linear-gradient(135deg, rgba(55, 118, 171, .2), rgba(255, 212, 59, .2))
+        }
+
+        .article-card.react {
+            background: linear-gradient(135deg, rgba(32, 35, 42, .2), rgba(97, 218, 251, .2))
+        }
+
+        .article-card.career {
+            background: linear-gradient(135deg, rgba(108, 60, 225, .2), rgba(6, 214, 160, .2))
+        }
+
+        .article-card .post-content {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column
+        }
+
+        .article-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.4
+        }
+
+        .article-card h3 a {
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition)
+        }
+
+        .article-card h3 a:hover {
+            color: var(--primary-light)
+        }
+
+        .article-card p {
+            color: var(--gray-2);
+            font-size: .95rem;
+            margin-bottom: 16px;
+            line-height: 1.6;
+            flex: 1
+        }
+
+        .article-card .post-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, .06)
+        }
+
+        .article-card .read-time {
+            font-size: .85rem;
+            color: var(--gray-2);
+            display: flex;
+            align-items: center;
+            gap: 4px
+        }
+
+        .article-card .btn-read {
+            font-size: .85rem;
+            padding: 8px 16px
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 48px
+        }
+
+        .pagination button {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-sm);
+            background: var(--dark-3);
+            border: 1px solid rgba(255, 255, 255, .1);
+            color: var(--white);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition)
+        }
+
+        .pagination button:hover,
+        .pagination button.active {
+            background: var(--primary);
+            border-color: var(--primary)
+        }
+
+        .pagination .dots {
+            color: var(--gray-2);
+            padding: 0 8px
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 24px
+        }
+
+        /* Categories Widget */
+        .sidebar-widget {
+            background: var(--dark-2);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: var(--radius-lg);
+            padding: 24px
+        }
+
+        .sidebar-widget h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 16px
+        }
+
+        .categories-list {
+            list-style: none
+        }
+
+        .categories-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .06)
+        }
+
+        .categories-list li:last-child {
+            border-bottom: none
+        }
+
+        .categories-list a {
+            color: var(--gray-2);
+            text-decoration: none;
+            font-size: .95rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px
+        }
+
+        .categories-list a:hover {
+            color: var(--primary-light)
+        }
+
+        .categories-list .count {
+            background: rgba(255, 255, 255, .1);
+            padding: 2px 10px;
+            border-radius: 50px;
+            font-size: .8rem;
+            color: var(--gray-2)
+        }
+
+        /* Tags Widget */
+        .tags-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px
+        }
+
+        .tag-cloud {
+            padding: 6px 14px;
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 50px;
+            color: var(--gray-2);
+            font-size: .85rem;
+            text-decoration: none;
+            transition: var(--transition)
+        }
+
+        .tag-cloud:hover {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary)
+        }
+
+        /* Newsletter Widget */
+        .newsletter-widget {
+            background: var(--gradient-1);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            text-align: center
+        }
+
+        .newsletter-widget h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px
+        }
+
+        .newsletter-widget p {
+            font-size: .9rem;
+            opacity: .9;
+            margin-bottom: 16px
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px
+        }
+
+        .newsletter-form input {
+            padding: 12px 16px;
+            border-radius: var(--radius-sm);
+            border: none;
+            font-size: .95rem;
+            outline: none
+        }
+
+        .newsletter-form button {
+            padding: 12px;
+            background: var(--dark);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition)
+        }
+
+        .newsletter-form button:hover {
+            transform: translateY(-2px)
+        }
+
+        .newsletter-note {
+            font-size: .75rem;
+            opacity: .8;
+            margin-top: 8px
+        }
+
+        /* Popular Posts */
+        .popular-posts {
+            list-style: none
+        }
+
+        .popular-post {
+            display: flex;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .06)
+        }
+
+        .popular-post:last-child {
+            border-bottom: none
+        }
+
+        .popular-post .thumb {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-sm);
+            background: var(--dark-3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0
+        }
+
+        .popular-post .info {
+            flex: 1
+        }
+
+        .popular-post .info h4 {
+            font-size: .95rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            line-height: 1.3
+        }
+
+        .popular-post .info h4 a {
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition)
+        }
+
+        .popular-post .info h4 a:hover {
+            color: var(--primary-light)
+        }
+
+        .popular-post .info .meta {
+            font-size: .8rem;
+            color: var(--gray-2)
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-2);
+            border-top: 1px solid rgba(255, 255, 255, .05);
+            padding: 64px 0 32px
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px
+        }
+
+        .footer-brand p {
+            color: var(--gray-2);
+            font-size: .9rem;
+            line-height: 1.7;
+            margin-top: 16px;
+            max-width: 320px
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-sm);
+            background: rgba(255, 255, 255, .05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-2);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.1rem
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+            color: var(--white)
+        }
+
+        .footer-col h4 {
+            font-size: .95rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--white)
+        }
+
+        .footer-col ul {
+            list-style: none
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px
+        }
+
+        .footer-col ul li a {
+            color: var(--gray-2);
+            text-decoration: none;
+            font-size: .9rem;
+            transition: var(--transition)
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-light)
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, .05);
+            padding-top: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px
+        }
+
+        .footer-bottom p {
+            font-size: .85rem;
+            color: var(--gray-1)
+        }
+
+        /* Responsive */
+        @media(max-width:1024px) {
+            .blog-layout {
+                grid-template-columns: 1fr
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr
+            }
+        }
+
+        @media(max-width:768px) {
+
+            .navbar-menu,
+            .navbar-cta {
+                display: none
+            }
+
+            .hamburger {
+                display: flex
+            }
+
+            .mobile-menu {
+                display: flex
+            }
+
+            .section {
+                padding: 60px 0
+            }
+
+            .blog-hero {
+                padding: 100px 0 40px
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center
+            }
+        }
+
+        @media(max-width:480px) {
+            .blog-hero h1 {
+                font-size: 2rem
+            }
+
+            .featured-post .post-thumbnail {
+                height: 200px
+            }
+
+            .featured-post h2 {
+                font-size: 1.4rem
+            }
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity .6s ease, transform .6s ease
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0)
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="../index.html" class="navbar-logo" aria-label="CodeMaster Academy Home">
+                <div class="logo-icon">⚡</div> CodeMaster
+            </a>
+            <ul class="navbar-menu">
+                <li><a href="../index.html#features">Fitur</a></li>
+                <li><a href="../index.html#courses">Kursus</a></li>
+                <li><a href="../index.html#playground">Playground</a></li>
+                <li><a href="../index.html#pricing">Harga</a></li>
+                <li><a href="../index.html#faq">FAQ</a></li>
+            </ul>
+            <div class="navbar-cta">
+                <a href="../auth/login.html" class="btn btn-secondary">Masuk</a>
+                <a href="../auth/register.html" class="btn btn-primary">Mulai Gratis</a>
+            </div>
+            <button class="hamburger" aria-label="Toggle menu" onclick="toggleMobileMenu()">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" onclick="toggleMobileMenu()" aria-label="Close menu">✕</button>
+        <a href="../index.html#features" onclick="toggleMobileMenu()">Fitur</a>
+        <a href="../index.html#courses" onclick="toggleMobileMenu()">Kursus</a>
+        <a href="../index.html#playground" onclick="toggleMobileMenu()">Playground</a>
+        <a href="../index.html#pricing" onclick="toggleMobileMenu()">Harga</a>
+        <a href="../index.html#faq" onclick="toggleMobileMenu()">FAQ</a>
+        <a href="../auth/register.html" class="btn btn-primary" style="margin-top:16px">Mulai Gratis</a>
+    </div>
+
+    <!-- Blog Hero -->
+    <header class="blog-hero">
+        <div class="container reveal">
+            <span
+                style="display:inline-flex;align-items:center;gap:8px;background:rgba(108,60,225,.15);border:1px solid rgba(108,60,225,.3);color:var(--primary-light);padding:6px 16px;border-radius:50px;font-size:.85rem;font-weight:600;margin-bottom:16px">📚
+                Blog & Tutorial</span>
+            <h1>Belajar Coding dari <span class="gradient-text">Para Ahli</span></h1>
+            <p>Artikel, tutorial, dan tips programming terbaru untuk membantu Anda menguasai keterampilan coding dan
+                berkembang di industri teknologi.</p>
+
+            <div class="blog-search">
+                <span class="search-icon">🔍</span>
+                <input type="search" id="blogSearch" placeholder="Cari artikel, tutorial, atau topik..."
+                    oninput="filterArticles()">
+            </div>
+
+            <div class="blog-tags">
+                <span class="blog-tag active" data-filter="all">Semua</span>
+                <span class="blog-tag" data-filter="tutorial">Tutorial</span>
+                <span class="blog-tag" data-filter="tips">Tips & Trik</span>
+                <span class="blog-tag" data-filter="career">Karir</span>
+                <span class="blog-tag" data-filter="news">Berita Tech</span>
+                <span class="blog-tag" data-filter="project">Project</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Blog Content -->
+    <section class="section">
+        <div class="container">
+            <div class="blog-layout">
+                <!-- Main Content -->
+                <main>
+                    <!-- Featured Post -->
+                    <article class="featured-post reveal">
+                        <div class="post-thumbnail">
+                            <span class="post-badge">🔥 Featured</span>
+                            🚀
+                        </div>
+                        <div class="post-content">
+                            <span class="post-category">Tutorial</span>
+                            <div class="post-meta">
+                                <span>📅 20 Mei 2026</span>
+                                <span>⏱ 12 min read</span>
+                            </div>
+                            <h2><a href="#">Panduan Lengkap Menjadi Full-Stack Developer di 2026: Roadmap, Skill, dan
+                                    Strategi Karir</a></h2>
+                            <p>Ingin menjadi full-stack developer yang kompetitif? Panduan komprehensif ini membahas
+                                roadmap belajar, teknologi yang wajib dikuasai, strategi membangun portfolio, dan tips
+                                mendapatkan pekerjaan pertama Anda di industri tech Indonesia.</p>
+                            <div class="post-author">
+                                <div class="author-avatar">AR</div>
+                                <div class="author-info">
+                                    <span class="name">Andi Rahman</span>
+                                    <span class="date">Co-Founder CodeMaster</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Articles Grid -->
+                    <div class="articles-grid" id="articlesGrid">
+                        <!-- Article 1 -->
+                        <article class="article-card js reveal" data-category="tutorial" data-tags="javascript,web">
+                            <div class="post-thumbnail">⚡</div>
+                            <div class="post-content">
+                                <span class="post-category">Tutorial</span>
+                                <h3><a href="#">10 Konsep JavaScript Modern yang Wajib Dikuasai Developer 2026</a></h3>
+                                <p>Exploring async/await, destructuring, modules, dan fitur ES2026 terbaru yang akan
+                                    meningkatkan produktivitas coding Anda.</p>
+                                <div class="post-footer">
+                                    <div class="post-meta">
+                                        <span>📅 18 Mei</span>
+                                        <span class="read-time">⏱ 8 min</span>
+                                    </div>
+                                    <a href="#" class="btn btn-secondary btn-sm btn-read">Baca</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Article 2 -->
+                        <article class="article-card python reveal" data-category="tips" data-tags="python,automation">
+                            <div class="post-thumbnail">🐍</div>
+                            <div class="post-content">
+                                <span class="post-category">Tips & Trik</span>
+                                <h3><a href="#">Automasi Tugas Harian dengan Python: 5 Script yang Menghemat Waktu
+                                        Anda</a></h3>
+                                <p>Belajar membuat script Python untuk automasi file management, web scraping, email,
+                                    dan tugas repetitif lainnya.</p>
+                                <div class="post-footer">
+                                    <div class="post-meta">
+                                        <span>📅 15 Mei</span>
+                                        <span class="read-time">⏱ 10 min</span>
+                                    </div>
+                                    <a href="#" class="btn btn-secondary btn-sm btn-read">Baca</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Article 3 -->
+                        <article class="article-card career reveal" data-category="career" data-tags="interview,career">
+                            <div class="post-thumbnail">💼</div>
+                            <div class="post-content">
+                                <span class="post-category">Karir</span>
+                                <h3><a href="#">Tips Lolos Technical Interview: Dari Coding Test hingga System
+                                        Design</a></h3>
+                                <p>Panduan praktis mempersiapkan technical interview di perusahaan tech, lengkap dengan
+                                    contoh soal dan strategi menjawab.</p>
+                                <div class="post-footer">
+                                    <div class="post-meta">
+                                        <span>📅 12 Mei</span>
+                                        <span class="read-time">⏱ 15 min</span>
+                                    </div>
+                                    <a href="#" class="btn btn-secondary btn-sm btn-read">Baca</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Article 4 -->
+                        <article class="article-card react reveal" data-category="tutorial" data-tags="react,frontend">
+                            <div class="post-thumbnail">⚛️</div>
+                            <div class="post-content">
+                                <span class="post-category">Tutorial</span>
+                                <h3><a href="#">Membangun Aplikasi React dengan Server Components: Panduan Praktis</a>
+                                </h3>
+                                <p>Memahami React Server Components dan cara mengimplementasikannya untuk performa
+                                    aplikasi yang lebih baik.</p>
+                                <div class="post-footer">
+                                    <div class="post-meta">
+                                        <span>📅 10 Mei</span>
+                                        <span class="read-time">⏱ 11 min</span>
+                                    </div>
+                                    <a href="#" class="btn btn-secondary btn-sm btn-read">Baca</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Article 5 -->
+                        <article class="article-card html reveal" data-category="project" data-tags="css,project">
+                            <div class="post-thumbnail">🎨</div>
+                            <div class="post-content">
+                                <span class="post-category">Project</span>
+                                <h3><a href="#">Build Your Portfolio: 5 Project CSS yang Wajib Ada di GitHub Anda</a>
+                                </h3>
+                                <p>Kumpulan project CSS kreatif yang akan mempercantik portfolio Anda dan menunjukkan
+                                    keahlian frontend yang solid.</p>
+                                <div class="post-footer">
+                                    <div class="post-meta">
+                                        <span>📅 8 Mei</span>
+                                        <span class="read-time">⏱ 9 min</span>
+                                    </div>
+                                    <a href="#" class="btn btn-secondary btn-sm btn-read">Baca</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Article 6 -->
+                        <article class="article-card career reveal" data-category="news" data-tags="ai,tech">
+                            <div class="post-thumbnail">🤖</div>
+                            <div class="post-content">
+                                <span class="post-category">Berita Tech</span>
+                                <h3><a href="#">AI & Developer: Bagaimana Adaptasi di Era Kecerdasan Buatan?</a></h3>
+                                <p>Analisis dampak AI tools seperti Copilot dan ChatGPT terhadap pekerjaan developer,
+                                    serta strategi tetap relevan di masa depan.</p>
+                                <div class="post-footer">
+                                    <div class="post-meta">
+                                        <span>📅 5 Mei</span>
+                                        <span class="read-time">⏱ 7 min</span>
+                                    </div>
+                                    <a href="#" class="btn btn-secondary btn-sm btn-read">Baca</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination reveal">
+                        <button disabled>←</button>
+                        <button class="active">1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <span class="dots">...</span>
+                        <button>10</button>
+                        <button>→</button>
+                    </div>
+                </main>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <!-- Categories -->
+                    <div class="sidebar-widget reveal">
+                        <h3>📂 Kategori</h3>
+                        <ul class="categories-list">
+                            <li><a href="#" data-filter="tutorial">📖 Tutorial</a><span class="count">24</span></li>
+                            <li><a href="#" data-filter="tips">💡 Tips & Trik</a><span class="count">18</span></li>
+                            <li><a href="#" data-filter="career">💼 Karir</a><span class="count">12</span></li>
+                            <li><a href="#" data-filter="news">📰 Berita Tech</a><span class="count">15</span></li>
+                            <li><a href="#" data-filter="project">🛠 Project</a><span class="count">9</span></li>
+                            <li><a href="#" data-filter="review">📊 Review Tools</a><span class="count">6</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Tags -->
+                    <div class="sidebar-widget reveal">
+                        <h3>🏷 Tags Populer</h3>
+                        <div class="tags-cloud">
+                            <a href="#" class="tag-cloud">JavaScript</a>
+                            <a href="#" class="tag-cloud">Python</a>
+                            <a href="#" class="tag-cloud">React</a>
+                            <a href="#" class="tag-cloud">CSS</a>
+                            <a href="#" class="tag-cloud">Node.js</a>
+                            <a href="#" class="tag-cloud">Career</a>
+                            <a href="#" class="tag-cloud">Interview</a>
+                            <a href="#" class="tag-cloud">AI</a>
+                            <a href="#" class="tag-cloud">Web Dev</a>
+                            <a href="#" class="tag-cloud">Portfolio</a>
+                        </div>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="newsletter-widget reveal">
+                        <h3>📬 Newsletter Mingguan</h3>
+                        <p>Dapatkan artikel terbaru, tips coding, dan eksklusif konten langsung ke inbox Anda.</p>
+                        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                            <input type="email" placeholder="Email Anda" required>
+                            <button type="submit">Berlangganan Gratis →</button>
+                        </form>
+                        <p class="newsletter-note">🔒 Kami menghargai privasi Anda. Unsubscribe kapan saja.</p>
+                    </div>
+
+                    <!-- Popular Posts -->
+                    <div class="sidebar-widget reveal">
+                        <h3>🔥 Artikel Populer</h3>
+                        <ul class="popular-posts">
+                            <li class="popular-post">
+                                <div class="thumb">⚡</div>
+                                <div class="info">
+                                    <h4><a href="#">Roadmap Belajar Web Development 2026</a></h4>
+                                    <span class="meta">📅 2 Mei • 5.2K views</span>
+                                </div>
+                            </li>
+                            <li class="popular-post">
+                                <div class="thumb">💼</div>
+                                <div class="info">
+                                    <h4><a href="#">Gaji Developer di Indonesia: Data Terbaru 2026</a></h4>
+                                    <span class="meta">📅 28 Apr • 4.8K views</span>
+                                </div>
+                            </li>
+                            <li class="popular-post">
+                                <div class="thumb">🐍</div>
+                                <div class="info">
+                                    <h4><a href="#">Python vs JavaScript: Mana yang Harus Dipelajari Duluan?</a></h4>
+                                    <span class="meta">📅 20 Apr • 4.1K views</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="navbar-logo">
+                        <div class="logo-icon">⚡</div> CodeMaster
+                    </a>
+                    <p>Platform belajar coding online terlengkap di Indonesia. Kuasai programming dari nol hingga siap
+                        kerja dengan metode pembelajaran interaktif.</p>
+                    <div class="footer-social">
+                        <a href="https://facebook.com/codemasteracademy" target="_blank" aria-label="Facebook">📘</a>
+                        <a href="https://instagram.com/codemasteracademy" target="_blank" aria-label="Instagram">📷</a>
+                        <a href="https://youtube.com/codemasteracademy" target="_blank" aria-label="YouTube">▶️</a>
+                        <a href="https://twitter.com/codemasteracademy" target="_blank" aria-label="Twitter">🐦</a>
+                        <a href="https://linkedin.com/company/codemasteracademy" target="_blank"
+                            aria-label="LinkedIn">💼</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Kursus</h4>
+                    <ul>
+                        <li><a href="../courses/html-css.html">HTML & CSS</a></li>
+                        <li><a href="../courses/javascript.html">JavaScript</a></li>
+                        <li><a href="../courses/python.html">Python</a></li>
+                        <li><a href="../courses/react.html">React.js</a></li>
+                        <li><a href="../courses/nodejs.html">Node.js</a></li>
+                        <li><a href="../courses/fullstack.html">Full-Stack</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Perusahaan</h4>
+                    <ul>
+                        <li><a href="about.html">Tentang Kami</a></li>
+                        <li><a href="careers.html">Karir</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="mentors.html">Mentor</a></li>
+                        <li><a href="partners.html">Partner</a></li>
+                        <li><a href="contact.html">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="../support/help.html">Pusat Bantuan</a></li>
+                        <li><a href="../support/faq.html">FAQ</a></li>
+                        <li><a href="../legal/privacy.html">Kebijakan Privasi</a></li>
+                        <li><a href="../legal/terms.html">Syarat & Ketentuan</a></li>
+                        <li><a href="../legal/refund.html">Refund Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CodeMaster Academy. All rights reserved.</p>
+                <p>Dibuat dengan ❤️ di Indonesia</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        }
+
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Filter articles by tag/category
+        const filterTags = document.querySelectorAll('.blog-tag');
+        const categoryLinks = document.querySelectorAll('.categories-list a');
+        const articles = document.querySelectorAll('.article-card');
+
+        function filterArticlesByCategory(category) {
+            articles.forEach(article => {
+                if (category === 'all' || article.dataset.category === category) {
+                    article.style.display = 'flex';
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+            // Update active state
+            filterTags.forEach(tag => tag.classList.remove('active'));
+            document.querySelector(`[data-filter="${category}"]`)?.classList.add('active');
+        }
+
+        filterTags.forEach(tag => {
+            tag.addEventListener('click', () => {
+                filterArticlesByCategory(tag.dataset.filter);
+            });
+        });
+
+        categoryLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                filterArticlesByCategory(link.dataset.filter);
+            });
+        });
+
+        // Search filter
+        function filterArticles() {
+            const query = document.getElementById('blogSearch').value.toLowerCase();
+            articles.forEach(article => {
+                const title = article.querySelector('h3 a').textContent.toLowerCase();
+                const excerpt = article.querySelector('p').textContent.toLowerCase();
+                const tags = article.dataset.tags;
+
+                if (title.includes(query) || excerpt.includes(query) || tags.includes(query)) {
+                    article.style.display = 'flex';
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+        }
+
+        // Newsletter form
+        function handleNewsletter(e) {
+            e.preventDefault();
+            const email = e.target.querySelector('input').value;
+            alert(`✅ Terima kasih! ${email} telah ditambahkan ke newsletter kami.`);
+            e.target.reset();
+        }
+
+        // Pagination (demo)
+        document.querySelectorAll('.pagination button:not([disabled])').forEach(btn => {
+            btn.addEventListener('click', function () {
+                if (!this.classList.contains('active')) {
+                    document.querySelector('.pagination .active').classList.remove('active');
+                    this.classList.add('active');
+                    window.scrollTo({ top: 400, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#' || href.startsWith('../')) return;
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

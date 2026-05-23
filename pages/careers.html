@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karir - CodeMaster Academy</title>
+    <meta name="description"
+        content="Bergabung dengan tim CodeMaster Academy. Karir menarik di bidang edtech dengan budaya kerja kolaboratif dan pertumbuhan yang cepat.">
+    <link rel="canonical" href="https://www.codemasteracademy.id/pages/careers.html">
+    <link rel="icon" type="image/svg+xml"
+        href="../data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6C3CE1;
+            --primary-dark: #5A2BC4;
+            --primary-light: #8B5CF6;
+            --secondary: #06D6A0;
+            --secondary-dark: #05B88A;
+            --accent: #FF6B6B;
+            --dark: #0F0F1A;
+            --dark-2: #1A1A2E;
+            --dark-3: #252540;
+            --dark-4: #2D2D4A;
+            --gray-1: #6B7280;
+            --gray-2: #9CA3AF;
+            --gray-3: #D1D5DB;
+            --light: #F8F9FC;
+            --white: #FFFFFF;
+            --gradient-1: linear-gradient(135deg, #6C3CE1 0%, #06D6A0 100%);
+            --gradient-2: linear-gradient(135deg, #FF6B6B 0%, #FF8C42 100%);
+            --gradient-3: linear-gradient(135deg, #6C3CE1 0%, #8B5CF6 50%, #06D6A0 100%);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, .1);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, .15);
+            --shadow-lg: 0 8px 40px rgba(0, 0, 0, .2);
+            --shadow-glow: 0 0 30px rgba(108, 60, 225, .3);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --transition: all .3s cubic-bezier(.4, 0, .2, 1)
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px
+        }
+
+        .section {
+            padding: 80px 0
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 16px
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray-2);
+            max-width: 600px;
+            line-height: 1.7
+        }
+
+        .gradient-text {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(108, 60, 225, .4)
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(108, 60, 225, .5)
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, .08);
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, .15)
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, .15);
+            transform: translateY(-2px)
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary-light);
+            border: 2px solid var(--primary-light);
+            padding: 12px 28px
+        }
+
+        .btn-outline:hover {
+            background: rgba(108, 60, 225, .1)
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 0;
+            transition: var(--transition);
+            background: transparent
+        }
+
+        .navbar.scrolled {
+            background: rgba(15, 15, 26, .9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, .05);
+            padding: 12px 0
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.4rem
+        }
+
+        .navbar-logo .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-1);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem
+        }
+
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none
+        }
+
+        .navbar-menu a {
+            color: var(--gray-2);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: .95rem;
+            transition: var(--transition);
+            position: relative
+        }
+
+        .navbar-menu a:hover {
+            color: var(--white)
+        }
+
+        .navbar-cta {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .navbar-cta .btn {
+            padding: 10px 24px;
+            font-size: .9rem
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 8px
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: var(--transition)
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 15, 26, .98);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition)
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            pointer-events: all
+        }
+
+        .mobile-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 600;
+            transition: var(--transition)
+        }
+
+        .mobile-menu a:hover {
+            color: var(--primary-light)
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer
+        }
+
+        .hero-careers {
+            padding: 120px 0 80px;
+            background: var(--dark-2);
+            border-bottom: 1px solid rgba(255, 255, 255, .05);
+            text-align: center
+        }
+
+        .hero-careers h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px
+        }
+
+        .hero-careers p {
+            font-size: 1.15rem;
+            color: var(--gray-2);
+            max-width: 700px;
+            margin: 0 auto 32px;
+            line-height: 1.8
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin: 48px 0
+        }
+
+        .benefit-card {
+            background: var(--dark-3);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            text-align: center
+        }
+
+        .benefit-card .icon {
+            font-size: 2rem;
+            margin-bottom: 12px
+        }
+
+        .benefit-card h4 {
+            font-weight: 600;
+            margin-bottom: 8px
+        }
+
+        .benefit-card p {
+            font-size: .9rem;
+            color: var(--gray-2)
+        }
+
+        .jobs-section {
+            background: var(--dark)
+        }
+
+        .jobs-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+            gap: 16px
+        }
+
+        .jobs-filters {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            background: var(--dark-3);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 50px;
+            color: var(--gray-2);
+            font-size: .9rem;
+            cursor: pointer;
+            transition: var(--transition)
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary)
+        }
+
+        .job-card {
+            background: var(--dark-2);
+            border: 1px solid rgba(255, 255, 255, .06);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            margin-bottom: 16px;
+            transition: var(--transition);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 24px;
+            flex-wrap: wrap
+        }
+
+        .job-card:hover {
+            border-color: rgba(108, 60, 225, .3);
+            transform: translateY(-2px)
+        }
+
+        .job-info {
+            flex: 1;
+            min-width: 280px
+        }
+
+        .job-info h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 8px
+        }
+
+        .job-meta {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 12px;
+            font-size: .9rem;
+            color: var(--gray-2)
+        }
+
+        .job-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px
+        }
+
+        .job-info p {
+            color: var(--gray-2);
+            margin-bottom: 16px
+        }
+
+        .job-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 16px
+        }
+
+        .job-tag {
+            padding: 4px 12px;
+            background: rgba(108, 60, 225, .15);
+            color: var(--primary-light);
+            border-radius: 50px;
+            font-size: .8rem;
+            font-weight: 500
+        }
+
+        .job-apply {
+            text-align: right;
+            min-width: 150px
+        }
+
+        .culture-section {
+            background: var(--dark-2)
+        }
+
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 48px;
+            align-items: center;
+            margin-top: 48px
+        }
+
+        .culture-image {
+            background: var(--dark-3);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: var(--radius-lg);
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem
+        }
+
+        .culture-content h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 20px
+        }
+
+        .culture-content p {
+            color: var(--gray-2);
+            margin-bottom: 16px;
+            line-height: 1.8
+        }
+
+        .culture-list {
+            list-style: none;
+            margin: 24px 0
+        }
+
+        .culture-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: var(--gray-2)
+        }
+
+        .culture-list li::before {
+            content: '✓';
+            color: var(--secondary);
+            font-weight: 700
+        }
+
+        .cta-careers {
+            background: var(--dark);
+            text-align: center;
+            padding: 80px 0
+        }
+
+        .cta-careers h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 16px
+        }
+
+        .cta-careers p {
+            font-size: 1.1rem;
+            color: var(--gray-2);
+            max-width: 600px;
+            margin: 0 auto 32px
+        }
+
+        .footer {
+            background: var(--dark-2);
+            border-top: 1px solid rgba(255, 255, 255, .05);
+            padding: 64px 0 32px
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px
+        }
+
+        .footer-brand p {
+            color: var(--gray-2);
+            font-size: .9rem;
+            line-height: 1.7;
+            margin-top: 16px;
+            max-width: 320px
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-sm);
+            background: rgba(255, 255, 255, .05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-2);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.1rem
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+            color: var(--white)
+        }
+
+        .footer-col h4 {
+            font-size: .95rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--white)
+        }
+
+        .footer-col ul {
+            list-style: none
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px
+        }
+
+        .footer-col ul li a {
+            color: var(--gray-2);
+            text-decoration: none;
+            font-size: .9rem;
+            transition: var(--transition)
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-light)
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, .05);
+            padding-top: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px
+        }
+
+        .footer-bottom p {
+            font-size: .85rem;
+            color: var(--gray-1)
+        }
+
+        @media(max-width:1024px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .culture-grid {
+                grid-template-columns: 1fr
+            }
+
+            .job-card {
+                flex-direction: column
+            }
+
+            .job-apply {
+                text-align: left
+            }
+        }
+
+        @media(max-width:768px) {
+
+            .navbar-menu,
+            .navbar-cta {
+                display: none
+            }
+
+            .hamburger {
+                display: flex
+            }
+
+            .mobile-menu {
+                display: flex
+            }
+
+            .section {
+                padding: 60px 0
+            }
+
+            .benefits-grid,
+            .footer-grid {
+                grid-template-columns: 1fr
+            }
+
+            .footer-grid {
+                gap: 32px
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar (sama seperti about.html) -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="../index.html" class="navbar-logo">
+                <div class="logo-icon">⚡</div> CodeMaster
+            </a>
+            <ul class="navbar-menu">
+                <li><a href="../index.html#features">Fitur</a></li>
+                <li><a href="../index.html#courses">Kursus</a></li>
+                <li><a href="../index.html#playground">Playground</a></li>
+                <li><a href="../index.html#pricing">Harga</a></li>
+                <li><a href="../index.html#faq">FAQ</a></li>
+            </ul>
+            <div class="navbar-cta">
+                <a href="../auth/login.html" class="btn btn-secondary">Masuk</a>
+                <a href="../auth/register.html" class="btn btn-primary">Mulai Gratis</a>
+            </div>
+            <button class="hamburger" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" onclick="toggleMobileMenu()">✕</button>
+        <a href="../index.html#features" onclick="toggleMobileMenu()">Fitur</a>
+        <a href="../index.html#courses" onclick="toggleMobileMenu()">Kursus</a>
+        <a href="../index.html#playground" onclick="toggleMobileMenu()">Playground</a>
+        <a href="../index.html#pricing" onclick="toggleMobileMenu()">Harga</a>
+        <a href="../index.html#faq" onclick="toggleMobileMenu()">FAQ</a>
+        <a href="../auth/register.html" class="btn btn-primary" style="margin-top:16px">Mulai Gratis</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero-careers">
+        <div class="container">
+            <h1>Bangun Masa Depan <span class="gradient-text">Bersama Kami</span></h1>
+            <p>CodeMaster Academy mencari talenta-talenta terbaik yang passionate tentang pendidikan dan teknologi.
+                Bergabunglah dengan tim yang sedang mengubah cara Indonesia belajar coding.</p>
+            <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+                <a href="#jobs" class="btn btn-primary">🔍 Lihat Lowongan</a>
+                <a href="#culture" class="btn btn-secondary">🌟 Budaya Kami</a>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="icon">🏠</div>
+                    <h4>Remote First</h4>
+                    <p>Kerja dari mana saja di Indonesia</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">📚</div>
+                    <h4>Learning Budget</h4>
+                    <p>Rp 5JT/tahun untuk pengembangan diri</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">🏥</div>
+                    <h4>Healthcare</h4>
+                    <p>Asuransi kesehatan untuk Anda & keluarga</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">🎁</div>
+                    <h4>Equity</h4>
+                    <p>Saham perusahaan untuk tim inti</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jobs -->
+    <section class="jobs-section section" id="jobs">
+        <div class="container">
+            <div class="jobs-header">
+                <div>
+                    <span
+                        style="display:inline-flex;align-items:center;gap:8px;background:rgba(108,60,225,.15);border:1px solid rgba(108,60,225,.3);color:var(--primary-light);padding:6px 16px;border-radius:50px;font-size:.85rem;font-weight:600;margin-bottom:16px">💼
+                        Lowongan</span>
+                    <h2 class="section-title">Posisi <span class="gradient-text">Tersedia</span></h2>
+                </div>
+                <div class="jobs-filters">
+                    <button class="filter-btn active">Semua</button>
+                    <button class="filter-btn">Engineering</button>
+                    <button class="filter-btn">Product</button>
+                    <button class="filter-btn">Education</button>
+                    <button class="filter-btn">Operations</button>
+                </div>
+            </div>
+
+            <div class="job-card">
+                <div class="job-info">
+                    <h3>Senior Full-Stack Developer</h3>
+                    <div class="job-meta">
+                        <span>📍 Remote, Indonesia</span>
+                        <span>💼 Full-time</span>
+                        <span>📅 Posted 2 days ago</span>
+                    </div>
+                    <p>Kami mencari developer berpengalaman untuk membangun fitur-fitur baru di platform CodeMaster.
+                        Anda akan bekerja dengan React, Node.js, dan teknologi modern lainnya.</p>
+                    <div class="job-tags">
+                        <span class="job-tag">React</span>
+                        <span class="job-tag">Node.js</span>
+                        <span class="job-tag">PostgreSQL</span>
+                        <span class="job-tag">AWS</span>
+                    </div>
+                </div>
+                <div class="job-apply">
+                    <a href="mailto:careers@codemasteracademy.id?subject=Lamaran: Senior Full-Stack Developer"
+                        class="btn btn-primary">Lamar Sekarang</a>
+                </div>
+            </div>
+
+            <div class="job-card">
+                <div class="job-info">
+                    <h3>Curriculum Developer</h3>
+                    <div class="job-meta">
+                        <span>📍 Remote, Indonesia</span>
+                        <span>💼 Full-time</span>
+                        <span>📅 Posted 5 days ago</span>
+                    </div>
+                    <p>Bantu kami menyusun kurikulum coding yang engaging dan efektif. Anda akan bekerja sama dengan
+                        mentor dan industry experts untuk menciptakan materi pembelajaran terbaik.</p>
+                    <div class="job-tags">
+                        <span class="job-tag">Instructional Design</span>
+                        <span class="job-tag">Coding</span>
+                        <span class="job-tag">Content Writing</span>
+                    </div>
+                </div>
+                <div class="job-apply">
+                    <a href="mailto:careers@codemasteracademy.id?subject=Lamaran: Curriculum Developer"
+                        class="btn btn-primary">Lamar Sekarang</a>
+                </div>
+            </div>
+
+            <div class="job-card">
+                <div class="job-info">
+                    <h3>Community Manager</h3>
+                    <div class="job-meta">
+                        <span>📍 Jakarta / Remote</span>
+                        <span>💼 Full-time</span>
+                        <span>📅 Posted 1 week ago</span>
+                    </div>
+                    <p>Kelola dan kembangkan komunitas siswa CodeMaster. Anda akan menjadi jembatan antara siswa,
+                        mentor, dan tim produk untuk menciptakan pengalaman belajar yang luar biasa.</p>
+                    <div class="job-tags">
+                        <span class="job-tag">Community</span>
+                        <span class="job-tag">Communication</span>
+                        <span class="job-tag">Social Media</span>
+                    </div>
+                </div>
+                <div class="job-apply">
+                    <a href="mailto:careers@codemasteracademy.id?subject=Lamaran: Community Manager"
+                        class="btn btn-primary">Lamar Sekarang</a>
+                </div>
+            </div>
+
+            <div class="job-card">
+                <div class="job-info">
+                    <h3>UX/UI Designer</h3>
+                    <div class="job-meta">
+                        <span>📍 Remote, Indonesia</span>
+                        <span>💼 Contract</span>
+                        <span>📅 Posted 2 weeks ago</span>
+                    </div>
+                    <p>Desain pengalaman pengguna yang intuitif dan menyenangkan untuk platform pembelajaran kami. Anda
+                        akan bekerja pada fitur-fitur baru dan improvement produk existing.</p>
+                    <div class="job-tags">
+                        <span class="job-tag">Figma</span>
+                        <span class="job-tag">User Research</span>
+                        <span class="job-tag">Prototyping</span>
+                    </div>
+                </div>
+                <div class="job-apply">
+                    <a href="mailto:careers@codemasteracademy.id?subject=Lamaran: UX/UI Designer"
+                        class="btn btn-primary">Lamar Sekarang</a>
+                </div>
+            </div>
+
+            <div style="text-align:center;margin-top:32px">
+                <p style="color:var(--gray-2);margin-bottom:16px">Tidak menemukan posisi yang cocok?</p>
+                <a href="mailto:careers@codemasteracademy.id?subject=Spontaneous Application" class="btn btn-outline">📮
+                    Kirim CV Spontan</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture -->
+    <section class="culture-section section" id="culture">
+        <div class="container">
+            <div class="culture-grid">
+                <div class="culture-image">🎉</div>
+                <div class="culture-content">
+                    <span
+                        style="display:inline-flex;align-items:center;gap:8px;background:rgba(6,214,160,.15);border:1px solid rgba(6,214,160,.3);color:var(--secondary);padding:6px 16px;border-radius:50px;font-size:.85rem;font-weight:600;margin-bottom:16px">🌟
+                        Budaya Kami</span>
+                    <h2>Bekerja di <span class="gradient-text">CodeMaster</span></h2>
+                    <p>Kami percaya bahwa tim yang bahagia menghasilkan produk yang hebat. Itulah mengapa kami membangun
+                        budaya kerja yang kolaboratif, inklusif, dan berfokus pada pertumbuhan.</p>
+                    <ul class="culture-list">
+                        <li>Feedback culture: Kami saling memberikan feedback konstruktif untuk berkembang bersama</li>
+                        <li>Autonomy & trust: Kami percaya pada kemampuan tim untuk mengambil keputusan terbaik</li>
+                        <li>Work-life balance: Kami menghargai waktu pribadi dan fleksibilitas kerja</li>
+                        <li>Continuous learning: Setiap anggota tim didorong untuk terus belajar dan berkembang</li>
+                        <li>Impact-driven: Kami fokus pada dampak nyata bagi siswa dan industri pendidikan</li>
+                    </ul>
+                    <a href="#jobs" class="btn btn-primary">🚀 Gabung Tim Kami</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-careers">
+        <div class="container">
+            <h2>Siap Membuat <span class="gradient-text">Dampak</span>?</h2>
+            <p>Bergabunglah dengan misi kami untuk menjadikan pendidikan coding berkualitas dapat diakses oleh semua
+                orang di Indonesia.</p>
+            <a href="#jobs" class="btn btn-primary">🔍 Lihat Lowongan Tersedia</a>
+        </div>
+    </section>
+
+    <!-- Footer (sama seperti about.html) -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="navbar-logo">
+                        <div class="logo-icon">⚡</div> CodeMaster
+                    </a>
+                    <p>Platform belajar coding online terlengkap di Indonesia. Kuasai programming dari nol hingga siap
+                        kerja dengan metode pembelajaran interaktif.</p>
+                    <div class="footer-social">
+                        <a href="https://facebook.com/codemasteracademy" target="_blank">📘</a>
+                        <a href="https://instagram.com/codemasteracademy" target="_blank">📷</a>
+                        <a href="https://youtube.com/codemasteracademy" target="_blank">▶️</a>
+                        <a href="https://twitter.com/codemasteracademy" target="_blank">🐦</a>
+                        <a href="https://linkedin.com/company/codemasteracademy" target="_blank">💼</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Kursus</h4>
+                    <ul>
+                        <li><a href="../courses/html-css.html">HTML & CSS</a></li>
+                        <li><a href="../courses/javascript.html">JavaScript</a></li>
+                        <li><a href="../courses/python.html">Python</a></li>
+                        <li><a href="../courses/react.html">React.js</a></li>
+                        <li><a href="../courses/nodejs.html">Node.js</a></li>
+                        <li><a href="../courses/fullstack.html">Full-Stack</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Perusahaan</h4>
+                    <ul>
+                        <li><a href="about.html">Tentang Kami</a></li>
+                        <li><a href="careers.html">Karir</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="mentors.html">Mentor</a></li>
+                        <li><a href="partners.html">Partner</a></li>
+                        <li><a href="contact.html">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="../support/help.html">Pusat Bantuan</a></li>
+                        <li><a href="../support/faq.html">FAQ</a></li>
+                        <li><a href="../legal/privacy.html">Kebijakan Privasi</a></li>
+                        <li><a href="../legal/terms.html">Syarat & Ketentuan</a></li>
+                        <li><a href="../legal/refund.html">Refund Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CodeMaster Academy. All rights reserved.</p>
+                <p>Dibuat dengan ❤️ di Indonesia</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 50) });
+        function toggleMobileMenu() { document.getElementById('mobileMenu').classList.toggle('active') }
+        document.querySelectorAll('.filter-btn').forEach(btn => { btn.addEventListener('click', function () { document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active')); this.classList.add('active') }) });
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function (e) { const href = this.getAttribute('href'); if (href === '#' || href.startsWith('../')) return; e.preventDefault(); const target = document.querySelector(href); if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }) } }) });
+    </script>
+</body>
+
+</html>
