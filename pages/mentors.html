@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor - CodeMaster Academy</title>
+    <meta name="description"
+        content="Belajar langsung dari mentor berpengalaman di CodeMaster Academy. Temukan ahli Frontend, Backend, Data Science, dan lainnya.">
+    <link rel="canonical" href="https://www.codemasteracademy.id/pages/mentors.html">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6C3CE1;
+            --primary-dark: #5A2BC4;
+            --primary-light: #8B5CF6;
+            --secondary: #06D6A0;
+            --secondary-dark: #05B88A;
+            --accent: #FF6B6B;
+            --dark: #0F0F1A;
+            --dark-2: #1A1A2E;
+            --dark-3: #252540;
+            --dark-4: #2D2D4A;
+            --gray-1: #6B7280;
+            --gray-2: #9CA3AF;
+            --gray-3: #D1D5DB;
+            --light: #F8F9FC;
+            --white: #FFFFFF;
+            --gradient-1: linear-gradient(135deg, #6C3CE1 0%, #06D6A0 100%);
+            --gradient-2: linear-gradient(135deg, #FF6B6B 0%, #FF8C42 100%);
+            --gradient-3: linear-gradient(135deg, #6C3CE1 0%, #8B5CF6 50%, #06D6A0 100%);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, .1);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, .15);
+            --shadow-lg: 0 8px 40px rgba(0, 0, 0, .2);
+            --shadow-glow: 0 0 30px rgba(108, 60, 225, .3);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --transition: all .3s cubic-bezier(.4, 0, .2, 1)
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px
+        }
+
+        .section {
+            padding: 80px 0
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 16px
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray-2);
+            max-width: 600px;
+            line-height: 1.7
+        }
+
+        .gradient-text {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(108, 60, 225, .4)
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(108, 60, 225, .5)
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, .08);
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, .15)
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, .15);
+            transform: translateY(-2px)
+        }
+
+        .btn-sm {
+            padding: 10px 20px;
+            font-size: .9rem
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 0;
+            transition: var(--transition);
+            background: transparent
+        }
+
+        .navbar.scrolled {
+            background: rgba(15, 15, 26, .9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, .05);
+            padding: 12px 0
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.4rem
+        }
+
+        .navbar-logo .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-1);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem
+        }
+
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none
+        }
+
+        .navbar-menu a {
+            color: var(--gray-2);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: .95rem;
+            transition: var(--transition);
+            position: relative
+        }
+
+        .navbar-menu a:hover {
+            color: var(--white)
+        }
+
+        .navbar-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-1);
+            transition: var(--transition);
+            border-radius: 2px
+        }
+
+        .navbar-menu a:hover::after {
+            width: 100%
+        }
+
+        .navbar-cta {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .navbar-cta .btn {
+            padding: 10px 24px;
+            font-size: .9rem
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 8px
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: var(--transition)
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 15, 26, .98);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition)
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            pointer-events: all
+        }
+
+        .mobile-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 600;
+            transition: var(--transition)
+        }
+
+        .mobile-menu a:hover {
+            color: var(--primary-light)
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer
+        }
+
+        /* Hero */
+        .mentors-hero {
+            padding: 120px 0 60px;
+            background: var(--dark-2);
+            border-bottom: 1px solid rgba(255, 255, 255, .05);
+            text-align: center
+        }
+
+        .mentors-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px
+        }
+
+        .mentors-hero p {
+            font-size: 1.15rem;
+            color: var(--gray-2);
+            max-width: 700px;
+            margin: 0 auto 32px;
+            line-height: 1.8
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 32px
+        }
+
+        .hero-stat .num {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent
+        }
+
+        .hero-stat .lbl {
+            font-size: .9rem;
+            color: var(--gray-2);
+            margin-top: 4px
+        }
+
+        /* Filters */
+        .filters-section {
+            padding: 32px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .05)
+        }
+
+        .filters-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap
+        }
+
+        .filter-btn {
+            padding: 10px 24px;
+            background: var(--dark-3);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 50px;
+            color: var(--gray-2);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition)
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+            transform: translateY(-2px)
+        }
+
+        /* Mentors Grid */
+        .mentors-grid-section {
+            background: var(--dark)
+        }
+
+        .mentors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+            min-height: 300px
+        }
+
+        .mentor-card {
+            background: var(--dark-2);
+            border: 1px solid rgba(255, 255, 255, .06);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column
+        }
+
+        .mentor-card:hover {
+            border-color: rgba(108, 60, 225, .3);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-glow)
+        }
+
+        .mentor-card.hidden {
+            display: none
+        }
+
+        .mentor-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px
+        }
+
+        .mentor-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--gradient-1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0
+        }
+
+        .mentor-name {
+            font-size: 1.25rem;
+            font-weight: 700
+        }
+
+        .mentor-role {
+            font-size: .9rem;
+            color: var(--primary-light)
+        }
+
+        .mentor-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 12px
+        }
+
+        .mentor-tag {
+            padding: 4px 10px;
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 50px;
+            font-size: .75rem;
+            color: var(--gray-2);
+            font-weight: 500
+        }
+
+        .mentor-bio {
+            color: var(--gray-2);
+            font-size: .95rem;
+            margin-bottom: 16px;
+            line-height: 1.6;
+            flex: 1
+        }
+
+        .mentor-rating {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 20px;
+            font-size: .9rem
+        }
+
+        .stars {
+            color: #FFD700;
+            letter-spacing: 1px
+        }
+
+        .rating-count {
+            color: var(--gray-2)
+        }
+
+        .mentor-card .btn {
+            width: 100%;
+            margin-top: auto
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .7);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition)
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: all
+        }
+
+        .modal-content {
+            background: var(--dark-2);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: var(--radius-xl);
+            width: 100%;
+            max-width: 700px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(.95);
+            transition: var(--transition)
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, .1);
+            border: none;
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            z-index: 10
+        }
+
+        .modal-close:hover {
+            background: var(--accent);
+            transform: rotate(90deg)
+        }
+
+        .modal-header {
+            padding: 32px 32px 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, .06);
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap
+        }
+
+        .modal-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--gradient-1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            flex-shrink: 0
+        }
+
+        .modal-info h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 4px
+        }
+
+        .modal-info .role {
+            color: var(--primary-light);
+            font-weight: 600;
+            margin-bottom: 8px
+        }
+
+        .modal-body {
+            padding: 24px 32px
+        }
+
+        .modal-body h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px
+        }
+
+        .modal-body p {
+            color: var(--gray-2);
+            line-height: 1.7;
+            margin-bottom: 20px
+        }
+
+        .course-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 24px
+        }
+
+        .course-item {
+            padding: 8px 16px;
+            background: rgba(6, 214, 160, .1);
+            border: 1px solid rgba(6, 214, 160, .2);
+            color: var(--secondary);
+            border-radius: 8px;
+            font-size: .9rem;
+            font-weight: 500
+        }
+
+        .testimonial-card {
+            background: var(--dark-3);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            margin-bottom: 12px
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 6px
+        }
+
+        .testimonial-card .author {
+            font-size: .85rem;
+            color: var(--gray-2);
+            font-weight: 500
+        }
+
+        .modal-footer {
+            padding: 24px 32px;
+            border-top: 1px solid rgba(255, 255, 255, .06);
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap
+        }
+
+        .modal-footer .btn {
+            flex: 1;
+            min-width: 140px
+        }
+
+        /* CTA Mentor */
+        .cta-mentor {
+            background: var(--dark);
+            padding: 80px 0
+        }
+
+        .cta-box {
+            background: var(--dark-2);
+            border: 1px solid rgba(6, 214, 160, .3);
+            border-radius: var(--radius-xl);
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(6, 214, 160, .1) 0%, transparent 60%);
+            animation: rotateBg 15s linear infinite
+        }
+
+        @keyframes rotateBg {
+            from {
+                transform: rotate(0deg)
+            }
+
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        .cta-box>* {
+            position: relative;
+            z-index: 1
+        }
+
+        .cta-box h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: 16px
+        }
+
+        .cta-box p {
+            font-size: 1.1rem;
+            color: var(--gray-2);
+            max-width: 650px;
+            margin: 0 auto 32px
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-2);
+            border-top: 1px solid rgba(255, 255, 255, .05);
+            padding: 64px 0 32px
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px
+        }
+
+        .footer-brand p {
+            color: var(--gray-2);
+            font-size: .9rem;
+            line-height: 1.7;
+            margin-top: 16px;
+            max-width: 320px
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-sm);
+            background: rgba(255, 255, 255, .05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-2);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.1rem
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+            color: var(--white)
+        }
+
+        .footer-col h4 {
+            font-size: .95rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--white)
+        }
+
+        .footer-col ul {
+            list-style: none
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px
+        }
+
+        .footer-col ul li a {
+            color: var(--gray-2);
+            text-decoration: none;
+            font-size: .9rem;
+            transition: var(--transition)
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-light)
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, .05);
+            padding-top: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px
+        }
+
+        .footer-bottom p {
+            font-size: .85rem;
+            color: var(--gray-1)
+        }
+
+        /* Animations & Responsive */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity .6s ease, transform .6s ease
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        @media(max-width:1024px) {
+            .hero-stats {
+                gap: 24px
+            }
+
+            .mentors-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+        }
+
+        @media(max-width:768px) {
+
+            .navbar-menu,
+            .navbar-cta {
+                display: none
+            }
+
+            .hamburger {
+                display: flex
+            }
+
+            .mobile-menu {
+                display: flex
+            }
+
+            .section {
+                padding: 60px 0
+            }
+
+            .mentors-grid {
+                grid-template-columns: 1fr
+            }
+
+            .modal-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center
+            }
+
+            .modal-footer {
+                flex-direction: column
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center
+            }
+        }
+
+        @media(max-width:480px) {
+            .mentors-hero h1 {
+                font-size: 2rem
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 16px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="../index.html" class="navbar-logo" aria-label="CodeMaster Academy Home">
+                <div class="logo-icon">⚡</div> CodeMaster
+            </a>
+            <ul class="navbar-menu">
+                <li><a href="../index.html#features">Fitur</a></li>
+                <li><a href="../index.html#courses">Kursus</a></li>
+                <li><a href="../index.html#playground">Playground</a></li>
+                <li><a href="../index.html#pricing">Harga</a></li>
+                <li><a href="../index.html#faq">FAQ</a></li>
+            </ul>
+            <div class="navbar-cta">
+                <a href="../auth/login.html" class="btn btn-secondary">Masuk</a>
+                <a href="../auth/register.html" class="btn btn-primary">Mulai Gratis</a>
+            </div>
+            <button class="hamburger" aria-label="Toggle menu"
+                onclick="toggleMobileMenu()"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" onclick="toggleMobileMenu()" aria-label="Close menu"></button>
+        <a href="../index.html#features" onclick="toggleMobileMenu()">Fitur</a>
+        <a href="../index.html#courses" onclick="toggleMobileMenu()">Kursus</a>
+        <a href="../index.html#playground" onclick="toggleMobileMenu()">Playground</a>
+        <a href="../index.html#pricing" onclick="toggleMobileMenu()">Harga</a>
+        <a href="../index.html#faq" onclick="toggleMobileMenu()">FAQ</a>
+        <a href="../auth/register.html" class="btn btn-primary" style="margin-top:16px">Mulai Gratis</a>
+    </div>
+
+    <!-- Hero -->
+    <header class="mentors-hero">
+        <div class="container reveal">
+            <span
+                style="display:inline-flex;align-items:center;gap:8px;background:rgba(6,214,160,.15);border:1px solid rgba(6,214,160,.3);color:var(--secondary);padding:6px 16px;border-radius:50px;font-size:.85rem;font-weight:600;margin-bottom:16px">👨‍🏫
+                Tim Mentor</span>
+            <h1>Belajar Langsung dari <span class="gradient-text">Praktisi Industri</span></h1>
+            <p>Mentor kami adalah senior developer, tech lead, dan engineer dari perusahaan teknologi terkemuka. Siap
+                membimbing Anda dari pemula hingga siap kerja.</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="num">25+</div>
+                    <div class="lbl">Mentor Aktif</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">4.9</div>
+                    <div class="lbl">Rating Rata-rata</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">500+</div>
+                    <div class="lbl">Sesi Mentorship/Bulan</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Filters -->
+    <section class="filters-section">
+        <div class="container reveal">
+            <div class="filters-container" id="filterContainer">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="frontend">Frontend</button>
+                <button class="filter-btn" data-filter="backend">Backend</button>
+                <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+                <button class="filter-btn" data-filter="python">Python & Data</button>
+                <button class="filter-btn" data-filter="devops">DevOps & Cloud</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mentors Grid -->
+    <section class="mentors-grid-section section">
+        <div class="container">
+            <div class="mentors-grid" id="mentorsGrid">
+                <!-- Cards rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Mentor Detail Modal -->
+    <div class="modal-overlay" id="mentorModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()" aria-label="Close modal">✕</button>
+            <div class="modal-header">
+                <div class="modal-avatar" id="modalAvatar">👤</div>
+                <div class="modal-info">
+                    <h2 id="modalName">Nama Mentor</h2>
+                    <div class="role" id="modalRole">Posisi</div>
+                    <div class="mentor-tags" id="modalTags"></div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <h3>📖 Tentang Mentor</h3>
+                <p id="modalBio">Bio lengkap mentor akan ditampilkan di sini.</p>
+
+                <h3>📚 Kursus yang Diampu</h3>
+                <div class="course-list" id="modalCourses"></div>
+
+                <h3>💬 Testimoni Siswa</h3>
+                <div id="modalTestimonials"></div>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-primary" id="modalBooking" target="_blank">📅 Booking Sesi 1-on-1</a>
+                <a href="../courses/index.html" class="btn btn-secondary">🎓 Lihat Kursus</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Jadi Mentor -->
+    <section class="cta-mentor">
+        <div class="container">
+            <div class="cta-box reveal">
+                <h2>Bergabung Sebagai <span class="gradient-text">Mentor CodeMaster</span></h2>
+                <p>Punya pengalaman industri dan passion mengajar? Bagikan ilmu Anda, bantu generasi developer
+                    Indonesia, dan dapatkan penghasilan tambahan yang kompetitif.</p>
+                <div class="cta-buttons">
+                    <a href="#apply" class="btn btn-primary">📝 Daftar Jadi Mentor</a>
+                    <a href="mailto:mentors@codemasteracademy.id" class="btn btn-secondary">✉️ Hubungi Tim</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="navbar-logo">
+                        <div class="logo-icon">⚡</div> CodeMaster
+                    </a>
+                    <p>Platform belajar coding online terlengkap di Indonesia. Kuasai programming dari nol hingga siap
+                        kerja dengan metode pembelajaran interaktif.</p>
+                    <div class="footer-social">
+                        <a href="https://facebook.com/codemasteracademy" target="_blank">📘</a>
+                        <a href="https://instagram.com/codemasteracademy" target="_blank">📷</a>
+                        <a href="https://youtube.com/codemasteracademy" target="_blank">▶️</a>
+                        <a href="https://twitter.com/codemasteracademy" target="_blank">🐦</a>
+                        <a href="https://linkedin.com/company/codemasteracademy" target="_blank">💼</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Kursus</h4>
+                    <ul>
+                        <li><a href="../courses/html-css.html">HTML & CSS</a></li>
+                        <li><a href="../courses/javascript.html">JavaScript</a></li>
+                        <li><a href="../courses/python.html">Python</a></li>
+                        <li><a href="../courses/react.html">React.js</a></li>
+                        <li><a href="../courses/nodejs.html">Node.js</a></li>
+                        <li><a href="../courses/fullstack.html">Full-Stack</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Perusahaan</h4>
+                    <ul>
+                        <li><a href="about.html">Tentang Kami</a></li>
+                        <li><a href="careers.html">Karir</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="mentors.html">Mentor</a></li>
+                        <li><a href="partners.html">Partner</a></li>
+                        <li><a href="contact.html">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="../support/help.html">Pusat Bantuan</a></li>
+                        <li><a href="../support/faq.html">FAQ</a></li>
+                        <li><a href="../legal/privacy.html">Kebijakan Privasi</a></li>
+                        <li><a href="../legal/terms.html">Syarat & Ketentuan</a></li>
+                        <li><a href="../legal/refund.html">Refund Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CodeMaster Academy. All rights reserved.</p>
+                <p>Dibuat dengan ❤️ di Indonesia</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ===== 1. SCROLL REVEAL (DIDEKLARASIKAN PALING AWAL) =====
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
+
+        // ===== 2. MENTOR DATA =====
+        const mentors = [
+            { id: 1, name: "Andi Rahman", role: "Lead Full-Stack Engineer", category: "fullstack", tags: ["JavaScript", "React", "Node.js", "PostgreSQL"], bio: "10+ tahun pengalaman membangun aplikasi web skala enterprise. Pernah memimpin tim engineering di startup unicorn Indonesia. Passionate tentang arsitektur software dan mentoring developer junior.", rating: 4.9, reviews: 142, avatar: "AR", courses: ["Full-Stack Bootcamp", "Advanced JavaScript", "System Design"], testimonials: [{ text: "Penjelasannya sangat terstruktur dan mudah dipahami. Sangat membantu karir saya sebagai junior dev.", author: "Budi S." }], scheduleLink: "https://calendly.com/codemaster-andi" },
+            { id: 2, name: "Sinta Nurhaliza", role: "Senior Frontend Developer", category: "frontend", tags: ["React", "TypeScript", "CSS", "UI/UX"], bio: "Spesialis frontend dengan fokus pada performa dan aksesibilitas. Berpengalaman dalam membangun design system dan komponen reusable untuk aplikasi web modern.", rating: 4.8, reviews: 98, avatar: "SN", courses: ["React Masterclass", "Advanced CSS & Animation", "TypeScript for Frontend"], testimonials: [{ text: "Mentoringnya sangat detail, terutama soal state management dan performance optimization.", author: "Dewi R." }], scheduleLink: "https://calendly.com/codemaster-sinta" },
+            { id: 3, name: "Budi Wijaya", role: "Backend Architect", category: "backend", tags: ["Node.js", "Go", "Docker", "Microservices"], bio: "Ahli backend dan cloud infrastructure. Telah mendesain sistem yang menangani jutaan request per hari. Fokus pada clean code, testing, dan scalable architecture.", rating: 4.9, reviews: 115, avatar: "BW", courses: ["Node.js Backend Deep Dive", "Microservices Architecture", "Database Optimization"], testimonials: [{ text: "Sangat expert di backend. Saya belajar banyak soal deployment dan monitoring production.", author: "Reza P." }], scheduleLink: "https://calendly.com/codemaster-budi" },
+            { id: 4, name: "Maya Sari", role: "Data Scientist & Python Expert", category: "python", tags: ["Python", "Pandas", "Machine Learning", "AI"], bio: "Data Scientist dengan latar belakang matematika dan computer science. Berpengalaman di industri fintech dan e-commerce. Ahli dalam data analysis, ML pipelines, dan visualisasi.", rating: 4.7, reviews: 76, avatar: "MS", courses: ["Python for Data Science", "Machine Learning Fundamentals", "AI with Python"], testimonials: [{ text: "Cara mengajar Maya sangat interaktif. Proyek data real-life yang diberikan sangat aplikatif.", author: "Lina M." }], scheduleLink: "https://calendly.com/codemaster-maya" },
+            { id: 5, name: "Reza Pratama", role: "DevOps & Cloud Engineer", category: "devops", tags: ["AWS", "Docker", "Kubernetes", "CI/CD"], bio: "DevOps engineer bersertifikasi AWS & GCP. Spesialis dalam automasi deployment, infrastructure as code, dan monitoring sistem produksi di cloud.", rating: 4.8, reviews: 64, avatar: "RP", courses: ["AWS Cloud Fundamentals", "Docker & Kubernetes", "CI/CD Pipelines"], testimonials: [{ text: "Reza sangat membantu saya memahami konsep cloud yang awalnya terasa sangat kompleks.", author: "Fajar K." }], scheduleLink: "https://calendly.com/codemaster-reza" },
+            { id: 6, name: "Dian Purnama", role: "Mobile Developer (React Native)", category: "frontend", tags: ["React Native", "Flutter", "iOS", "Android"], bio: "Mobile developer dengan pengalaman merilis 15+ aplikasi di App Store & Play Store. Ahli dalam cross-platform development, native bridging, dan app store optimization.", rating: 4.6, reviews: 52, avatar: "DP", courses: ["React Native Zero to Hero", "Flutter Masterclass", "Mobile App Deployment"], testimonials: [{ text: "Sesi mentoringnya sangat praktis. Langsung bisa apply ke project mobile saya.", author: "Sari W." }], scheduleLink: "https://calendly.com/codemaster-dian" }
+        ];
+
+        // ===== 3. RENDER FUNCTION =====
+        const grid = document.getElementById('mentorsGrid');
+        function renderMentors(filter = 'all') {
+            grid.innerHTML = '';
+            const filtered = mentors.filter(m => filter === 'all' || m.category === filter);
+
+            filtered.forEach(m => {
+                const card = document.createElement('article');
+                card.className = 'mentor-card reveal';
+                card.innerHTML = `
+                    <div class="mentor-header">
+                        <div class="mentor-avatar">${m.avatar}</div>
+                        <div>
+                            <div class="mentor-name">${m.name}</div>
+                            <div class="mentor-role">${m.role}</div>
+                        </div>
+                    </div>
+                    <div class="mentor-tags">${m.tags.map(t => `<span class="mentor-tag">${t}</span>`).join('')}</div>
+                    <p class="mentor-bio">${m.bio.substring(0, 100)}...</p>
+                    <div class="mentor-rating">
+                        <span class="stars">★★★★★</span>
+                        <span>${m.rating}</span>
+                        <span class="rating-count">(${m.reviews} ulasan)</span>
+                    </div>
+                    <button class="btn btn-primary btn-sm" onclick="openModal(${m.id})">👁 Lihat Profil</button>
+                `;
+                grid.appendChild(card);
+                revealObserver.observe(card); // Observe immediately
+            });
+        }
+
+        // ===== 4. INITIALIZATION =====
+        document.addEventListener('DOMContentLoaded', () => {
+            renderMentors();
+
+            // Observe static elements
+            document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+        });
+
+        // ===== 5. FILTERS =====
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderMentors(btn.dataset.filter);
+            });
+        });
+
+        // ===== 6. MODAL =====
+        const modal = document.getElementById('mentorModal');
+        function openModal(id) {
+            const m = mentors.find(x => x.id === id);
+            if (!m) return;
+            document.getElementById('modalAvatar').textContent = m.avatar;
+            document.getElementById('modalName').textContent = m.name;
+            document.getElementById('modalRole').textContent = m.role;
+            document.getElementById('modalTags').innerHTML = m.tags.map(t => `<span class="mentor-tag">${t}</span>`).join('');
+            document.getElementById('modalBio').textContent = m.bio;
+            document.getElementById('modalCourses').innerHTML = m.courses.map(c => `<span class="course-item">${c}</span>`).join('');
+            document.getElementById('modalTestimonials').innerHTML = m.testimonials.map(t => `<div class="testimonial-card"><p>"${t.text}"</p><div class="author">- ${t.author}</div></div>`).join('');
+            document.getElementById('modalBooking').href = m.scheduleLink;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // ===== 7. NAVBAR & MOBILE MENU =====
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 50));
+        function toggleMobileMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }
+
+        // ===== 8. SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#' || href.startsWith('../')) return;
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+
+</html>
